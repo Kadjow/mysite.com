@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfólio V1 — Diogo Arthur Gulhak
 
-## Getting Started
+Portfólio profissional construído em Next.js com foco em posicionamento orientado a produto.
 
-First, run the development server:
+Em vez de vender Diogo como "dev de uma stack específica", esta V1 apresenta uma narrativa centrada em:
+
+- produto
+- arquitetura
+- mobile e front-end
+- UI/UX
+- entrega em produção
+- visão de negócio
+
+## Stack
+
+- Next.js 16
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui
+- Lucide React
+- next-themes
+- Framer Motion
+
+## Comandos
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Arquitetura de pastas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+src/
+  app/
+    layout.tsx
+    page.tsx
+    globals.css
+  assets/
+    images/
+      profile/
+      projects/
+  components/
+    ui/
+    layout/
+      site-header.tsx
+      site-footer.tsx
+      section-wrapper.tsx
+      theme-toggle.tsx
+    sections/
+      hero-section.tsx
+      about-section.tsx
+      experience-section.tsx
+      projects-section.tsx
+      capabilities-section.tsx
+      work-method-section.tsx
+      beyond-code-section.tsx
+      final-cta-section.tsx
+    cards/
+      metric-card.tsx
+      project-card.tsx
+      experience-card.tsx
+      capability-card.tsx
+      method-card.tsx
+    shared/
+      section-heading.tsx
+      external-link-button.tsx
+      tag-list.tsx
+      reveal.tsx
+      theme-provider.tsx
+  data/
+    profile.ts
+    metrics.ts
+    experiences.ts
+    projects.ts
+    capabilities.ts
+    work-method.ts
+    social-links.ts
+  lib/
+    utils.ts
+  styles/
+    tokens.css
+public/
+  diogo-arthur-gulhak-curriculo.html
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Decisões de Design System
 
-## Learn More
+- Tokens semânticos em `src/styles/tokens.css` para `background`, `foreground`, `card`, `muted`, `primary`, `accent`, `border`, `ring`, `success` e `warning`.
+- Tema claro/escuro com `next-themes` e estilo visual premium baseado em neutros + acento ciano/verde suave.
+- Componentes organizados em camadas pequenas e reutilizáveis para evitar dados hardcoded dentro das seções.
+- Layout editorial com bastante respiro, cards arredondados, blur leve, gradientes sutis e bordas suaves.
+- `shadcn/ui` como base dos botões, cards, badges, menu de tema e sheet mobile.
 
-To learn more about Next.js, take a look at the following resources:
+## O que foi implementado
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Header responsivo com CTA e toggle de tema.
+- Hero forte com métricas, CTAs e foto local.
+- Seções de sobre, experiência, projetos, capacidades, método, fora do código e CTA final.
+- Projetos e experiências renderizados a partir de `src/data`.
+- Currículo em arquivo HTML para download inicial na V1.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Próximos passos para V2
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Adicionar screenshots reais por projeto em `src/assets/images/projects`.
+- Publicar a V1 e trocar o link do projeto "novo portfólio" para a versão online.
+- Substituir o currículo HTML por PDF final revisado.
+- Incluir estudos de caso mais profundos para Atlas, Slingui, Spark e PO Agent.
+- Adicionar analytics, SEO expandido e Open Graph customizado.
+- Refinar microinterações e validação visual no browser após deploy.
