@@ -10,14 +10,15 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { content } from "@/i18n";
 
 const navItems = [
-  { label: "Início", href: "#inicio" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Experiência", href: "#experiencia" },
-  { label: "Projetos", href: "#projetos" },
-  { label: "Stack", href: "#stack" },
-  { label: "Contato", href: "#contato" },
+  { label: content.navigation.items.home, href: "#inicio" },
+  { label: content.navigation.items.about, href: "#sobre" },
+  { label: content.navigation.items.experience, href: "#experiencia" },
+  { label: content.navigation.items.projects, href: "#projetos" },
+  { label: content.navigation.items.stack, href: "#stack" },
+  { label: content.navigation.items.contact, href: "#contato" },
 ];
 
 export function SiteHeader() {
@@ -30,9 +31,11 @@ export function SiteHeader() {
               DAG
             </span>
             <div className="hidden sm:block">
-              <p className="text-sm font-semibold text-foreground">Diogo Gulhak</p>
+              <p className="text-sm font-semibold text-foreground">
+                {content.site.brand.shortName}
+              </p>
               <p className="text-xs text-muted-foreground">
-                Produto, front-end e mobile
+                {content.site.brand.subtitle}
               </p>
             </div>
           </a>
@@ -53,7 +56,7 @@ export function SiteHeader() {
             <ThemeToggle />
             <Button asChild className="rounded-full px-5">
               <a href="#contato">
-                Falar comigo
+                {content.common.actions.contact}
                 <MessageCircleMore />
               </a>
             </Button>
@@ -67,7 +70,7 @@ export function SiteHeader() {
                   variant="outline"
                   size="icon"
                   className="rounded-full border-border/70 bg-background/70"
-                  aria-label="Abrir menu"
+                  aria-label={content.common.accessibility.openMenu}
                 >
                   <Menu />
                 </Button>
@@ -77,9 +80,9 @@ export function SiteHeader() {
                 className="w-[88vw] border-border bg-background/96 p-0 sm:max-w-sm"
               >
                 <SheetHeader className="border-b border-border/70 pb-5">
-                  <SheetTitle>Diogo Gulhak</SheetTitle>
+                  <SheetTitle>{content.site.brand.shortName}</SheetTitle>
                   <SheetDescription>
-                    Navegação principal do portfólio.
+                    {content.navigation.mobileDescription}
                   </SheetDescription>
                 </SheetHeader>
                 <div className="flex flex-col gap-2 px-4 py-5">
@@ -94,7 +97,7 @@ export function SiteHeader() {
                   ))}
                   <Button asChild className="mt-4 rounded-full">
                     <a href="#contato">
-                      Falar comigo
+                      {content.common.actions.contact}
                       <MessageCircleMore />
                     </a>
                   </Button>

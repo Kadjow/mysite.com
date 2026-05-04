@@ -8,6 +8,7 @@ import { ProjectSpotlightCard } from "@/components/sections/projects/project-spo
 import { Button } from "@/components/ui/button";
 import type { Project } from "@/data/projects";
 import { useProjectCarousel } from "@/hooks/use-project-carousel";
+import { content } from "@/i18n";
 import { cn } from "@/lib/utils";
 
 type ProjectSpotlightCarouselProps = {
@@ -92,7 +93,7 @@ export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselP
     <div
       role="region"
       aria-roledescription="carousel"
-      aria-label="Carrossel spotlight de projetos"
+      aria-label={content.projectSpotlight.carouselAriaLabel}
       tabIndex={projectCount > 1 ? 0 : -1}
       onKeyDown={(event) => {
         if (event.key === "ArrowLeft") {
@@ -113,10 +114,10 @@ export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselP
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-2">
             <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
-              Spotlight Carousel
+              {content.projectSpotlight.carouselLabel}
             </p>
             <p className="max-w-xl text-sm leading-7 text-muted-foreground">
-              O projeto central recebe leitura completa; os laterais funcionam como continuidade visual e navegação contextual.
+              {content.projectSpotlight.carouselDescription}
             </p>
           </div>
 
@@ -127,7 +128,12 @@ export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselP
               className="min-w-[5.5rem] text-right text-sm font-medium tracking-[0.2em] text-muted-foreground"
             >
               {formattedIndex} / {formattedTotal}
-              <span className="sr-only">{` Projeto atual: ${activeProject.name}.`}</span>
+              <span className="sr-only">
+                {content.projectSpotlight.currentProjectSrLabel.replace(
+                  "{name}",
+                  activeProject.name,
+                )}
+              </span>
             </p>
 
             <div className="flex items-center gap-2">
@@ -135,7 +141,7 @@ export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselP
                 type="button"
                 variant="outline"
                 size="icon"
-                aria-label="Ver projeto anterior"
+                aria-label={content.projectSpotlight.previousProjectAriaLabel}
                 onClick={goPrevious}
                 disabled={projectCount < 2}
                 className="rounded-full"
@@ -146,7 +152,7 @@ export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselP
                 type="button"
                 variant="outline"
                 size="icon"
-                aria-label="Ver próximo projeto"
+                aria-label={content.projectSpotlight.nextProjectAriaLabel}
                 onClick={goNext}
                 disabled={projectCount < 2}
                 className="rounded-full"

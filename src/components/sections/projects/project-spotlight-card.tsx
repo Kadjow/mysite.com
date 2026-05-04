@@ -5,6 +5,7 @@ import { TagList } from "@/components/shared/tag-list";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Project } from "@/data/projects";
+import { content } from "@/i18n";
 import { cn } from "@/lib/utils";
 
 const toneMap = {
@@ -31,7 +32,7 @@ export function ProjectSpotlightCard({
 }: ProjectSpotlightCardProps) {
   const isActive = variant === "active";
 
-  const content = (
+  const contentCard = (
     <Card
       className={cn(
         "surface-card mesh-border relative overflow-hidden rounded-[2rem] border-border/75 py-0 text-left transition-[border-color,box-shadow,opacity,transform] duration-300 ease-out motion-reduce:transform-none motion-reduce:transition-none",
@@ -96,21 +97,21 @@ export function ProjectSpotlightCard({
             <div className="grid gap-3 lg:grid-cols-3">
               <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4">
                 <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  Problema
+                  {content.projectSpotlight.problemLabel}
                 </p>
                 <p className="mt-2 text-sm leading-7 text-foreground/88">{project.caseStudy.problem}</p>
               </div>
 
               <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4">
                 <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  Solução
+                  {content.projectSpotlight.solutionLabel}
                 </p>
                 <p className="mt-2 text-sm leading-7 text-foreground/88">{project.caseStudy.solution}</p>
               </div>
 
               <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4">
                 <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  Impacto
+                  {content.projectSpotlight.impactLabel}
                 </p>
                 <p className="mt-2 text-sm leading-7 text-foreground/88">{project.caseStudy.impact}</p>
               </div>
@@ -142,7 +143,9 @@ export function ProjectSpotlightCard({
         ) : (
           <div className="mt-auto flex items-center justify-between gap-3 pt-2 text-xs text-muted-foreground">
             <span className="max-w-[16rem] leading-6">{project.highlight ?? project.preview}</span>
-            <span className="shrink-0 uppercase tracking-[0.18em]">Ver destaque</span>
+            <span className="shrink-0 uppercase tracking-[0.18em]">
+              {content.projectSpotlight.viewHighlightLabel}
+            </span>
           </div>
         )}
       </CardContent>
@@ -154,13 +157,16 @@ export function ProjectSpotlightCard({
       <button
         type="button"
         onClick={onSelect}
-        aria-label={`Destacar projeto ${project.name}`}
+        aria-label={content.projectSpotlight.selectProjectAriaLabel.replace(
+          "{name}",
+          project.name,
+        )}
         className="group block w-full cursor-pointer rounded-[2rem] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
-        {content}
+        {contentCard}
       </button>
     );
   }
 
-  return content;
+  return contentCard;
 }

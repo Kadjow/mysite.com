@@ -3,6 +3,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { workMethod } from "@/data/work-method";
+import { content } from "@/i18n";
 
 export function WorkMethodSection() {
   return (
@@ -10,9 +11,9 @@ export function WorkMethodSection() {
       <div className="space-y-10">
         <Reveal>
           <SectionHeading
-            eyebrow="Método"
-            title="Uma forma de trabalhar que equilibra contexto, execução e evolução contínua."
-            description="O processo é simples na superfície, mas disciplinado por dentro: entender bem, estruturar com critério, construir com qualidade e validar o que precisa mudar."
+            eyebrow={content.sections.workMethod.eyebrow}
+            title={content.sections.workMethod.title}
+            description={content.sections.workMethod.description}
           />
         </Reveal>
 

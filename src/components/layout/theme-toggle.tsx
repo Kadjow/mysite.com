@@ -5,6 +5,7 @@ import { MoonStar, SunMedium } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
+import { content } from "@/i18n";
 
 function subscribe() {
   return () => {};
@@ -32,7 +33,7 @@ export function ThemeToggle() {
         variant="outline"
         size="icon"
         className="rounded-full border-border/70 bg-background/70 backdrop-blur"
-        aria-label="Alternar tema"
+        aria-label={content.common.accessibility.toggleTheme}
         disabled
       >
         <span className="h-5 w-5" aria-hidden="true" />
@@ -47,7 +48,7 @@ export function ThemeToggle() {
       variant="outline"
       size="icon"
       className="rounded-full border-border/70 bg-background/70 backdrop-blur"
-      aria-label="Alternar tema"
+      aria-label={content.common.accessibility.toggleTheme}
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
       {isDark ? <SunMedium className="h-5 w-5" /> : <MoonStar className="h-5 w-5" />}

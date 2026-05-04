@@ -3,6 +3,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { experiences } from "@/data/experiences";
+import { content } from "@/i18n";
 
 export function ExperienceSection() {
   return (
@@ -10,9 +11,9 @@ export function ExperienceSection() {
       <div className="space-y-10">
         <Reveal>
           <SectionHeading
-            eyebrow="Experiência profissional"
-            title="Uma trajetória orientada a produto, entrega e operação em contexto real."
-            description="A experiência principal concentra a carreira formal: software, produto, operação e conversão aplicados a ambientes com responsabilidade de execução, impacto de negócio e qualidade de entrega."
+            eyebrow={content.sections.experience.eyebrow}
+            title={content.sections.experience.title}
+            description={content.sections.experience.description}
           />
         </Reveal>
 

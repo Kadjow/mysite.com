@@ -9,8 +9,8 @@ import {
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { ExternalLinkButton } from "@/components/shared/external-link-button";
 import { Reveal } from "@/components/shared/reveal";
-import { profile } from "@/data/profile";
 import { socialLinks } from "@/data/social-links";
+import { content } from "@/i18n";
 
 const iconMap: Record<(typeof socialLinks)[number]["icon"], LucideIcon> = {
   github: FolderGit2,
@@ -35,14 +35,14 @@ export function FinalCtaSection() {
 
           <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
             <div className="max-w-2xl space-y-5">
-              <p className="eyebrow">Contato</p>
+              <p className="eyebrow">{content.sections.finalCta.eyebrow}</p>
               <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground transition-all duration-500 group-hover:translate-x-1 sm:text-4xl">
                 <span className="bg-linear-to-r from-foreground via-foreground to-cyan-700 bg-clip-text transition-all duration-500 group-hover:text-transparent dark:to-cyan-200">
-                  {profile.finalCtaTitle}
+                  {content.sections.finalCta.title}
                 </span>
               </h2>
               <p className="text-pretty text-base leading-8 text-muted-foreground sm:text-lg">
-                {profile.finalCtaText}
+                {content.sections.finalCta.description}
               </p>
             </div>
 

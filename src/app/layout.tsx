@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Geist_Mono, Manrope } from "next/font/google";
 
 import { ThemeProvider } from "@/components/shared/theme-provider";
+import { content } from "@/i18n";
 
 import "./globals.css";
 
@@ -21,20 +22,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Diogo Arthur Gulhak | Produto, Front-end e Mobile",
-  description:
-    "Portfólio profissional de Diogo Arthur Gulhak, desenvolvedor orientado a produto com experiência em mobile, front-end, arquitetura, UI/UX, apps publicados e SaaS.",
-  keywords: [
-    "Diogo Arthur Gulhak",
-    "portfolio",
-    "Next.js",
-    "mobile",
-    "front-end",
-    "produto digital",
-    "UI UX",
-    "Flutter",
-    "TypeScript",
-  ],
+  title: content.site.metadata.title,
+  description: content.site.metadata.description,
+  keywords: content.site.metadata.keywords,
 };
 
 export default function RootLayout({

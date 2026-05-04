@@ -5,6 +5,7 @@ import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
 import { profile } from "@/data/profile";
+import { content } from "@/i18n";
 
 export function AboutSection() {
   return (
@@ -12,9 +13,9 @@ export function AboutSection() {
       <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12">
         <Reveal>
           <SectionHeading
-            eyebrow="Sobre"
-            title="Tecnologia como meio para construir produto útil, coerente e pronto para crescer."
-            description={profile.aboutLead}
+            eyebrow={content.sections.about.eyebrow}
+            title={content.sections.about.title}
+            description={content.sections.about.description}
           />
         </Reveal>
 

@@ -3,6 +3,7 @@ import { ProjectSpotlightCarousel } from "@/components/sections/projects/project
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { projects } from "@/data/projects";
+import { content } from "@/i18n";
 
 export function ProjectsSection() {
   return (
@@ -10,9 +11,9 @@ export function ProjectsSection() {
       <div className="space-y-10">
         <Reveal>
           <SectionHeading
-            eyebrow="Projetos"
-            title="Projetos apresentados com foco editorial, hierarquia clara e um spotlight que valoriza contexto, solução e impacto."
-            description="Em vez de uma grade genérica, a seção agora destaca um projeto por vez e usa os previews laterais para sugerir continuidade sem competir pela atenção principal."
+            eyebrow={content.sections.projects.eyebrow}
+            title={content.sections.projects.title}
+            description={content.sections.projects.description}
           />
         </Reveal>
 

@@ -3,6 +3,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { beyondCodeExperiences } from "@/data/beyond-code";
+import { content } from "@/i18n";
 
 export function BeyondCodeSection() {
   return (
@@ -11,9 +12,9 @@ export function BeyondCodeSection() {
         <div className="max-w-4xl">
           <Reveal>
             <SectionHeading
-              eyebrow="Além do código"
-              title="Liderança, comunidade e formação humana como diferencial estratégico."
-              description="Estas vivências não entram como extra. Elas reforçam maturidade profissional, capacidade de conduzir pessoas, presença em comunidade e disciplina de execução, ampliando o valor da atuação técnica."
+              eyebrow={content.sections.beyondCode.eyebrow}
+              title={content.sections.beyondCode.title}
+              description={content.sections.beyondCode.description}
             />
           </Reveal>
         </div>

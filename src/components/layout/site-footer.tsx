@@ -1,5 +1,5 @@
-import { profile } from "@/data/profile";
 import { socialLinks } from "@/data/social-links";
+import { content } from "@/i18n";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -9,10 +9,10 @@ export function SiteFooter() {
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 px-4 py-6 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p className="font-medium text-foreground">
-            &copy; {year} {profile.name}.
+            &copy; {year} {content.site.brand.fullName}.
           </p>
 
-          <nav aria-label="Links sociais">
+          <nav aria-label={content.footer.socialLinksAriaLabel}>
             <ul className="flex flex-wrap items-center gap-x-2 gap-y-1">
               {socialLinks.map((link, index) => {
                 const isExternal = link.href.startsWith("http");
@@ -35,8 +35,6 @@ export function SiteFooter() {
             </ul>
           </nav>
         </div>
-
-
       </div>
     </footer>
   );
