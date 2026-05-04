@@ -4,7 +4,6 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
-import { profile } from "@/data/profile";
 import { content } from "@/i18n";
 
 export function AboutSection() {
@@ -23,14 +22,14 @@ export function AboutSection() {
           <Card className="surface-card rounded-[2rem] py-0">
             <CardContent className="space-y-6 px-6 pt-6 pb-7 sm:px-7 sm:pt-7 sm:pb-8">
               <p className="display-title text-2xl leading-[1.35] text-foreground sm:text-3xl">
-                “{profile.aboutQuote}”
+                “{content.about.quote}”
               </p>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[1.4rem] border border-border/70 bg-background/60 p-4">
                   <div className="flex items-center gap-3 text-sm font-medium text-foreground">
                     <MapPin className="size-4 text-accent" />
-                    {profile.location}
+                    {content.common.person.location}
                   </div>
                   <p className="mt-2 text-sm leading-7 text-muted-foreground">
                     {content.about.baseInBrazil}
@@ -40,7 +39,7 @@ export function AboutSection() {
                 <div className="rounded-[1.4rem] border border-border/70 bg-background/60 p-4">
                   <div className="flex items-start gap-3 text-sm font-medium text-foreground">
                     <GraduationCap className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-                    <span>{profile.education}</span>
+                    <span>{content.common.person.education}</span>
                   </div>
                   <p className="mt-2 text-sm leading-7 text-muted-foreground">
                     {content.about.educationAligned}
@@ -53,7 +52,7 @@ export function AboutSection() {
                   {content.about.workGuidanceTitle}
                 </p>
                 <ul className="grid gap-3 text-sm leading-7 text-foreground/88">
-                  {profile.differentiators.map((item) => (
+                  {content.about.differentiators.map((item) => (
                     <li key={item} className="flex gap-3">
                       <CheckCircle2 className="mt-1 size-4 shrink-0 text-accent" />
                       <span>{item}</span>

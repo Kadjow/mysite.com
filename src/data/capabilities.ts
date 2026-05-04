@@ -1,3 +1,5 @@
+import { content } from "@/i18n";
+
 export type Capability = {
   title: string;
   description: string;
@@ -5,33 +7,29 @@ export type Capability = {
   icon: "mobile" | "frontend" | "architecture" | "product";
 };
 
-export const capabilities: Capability[] = [
+const capabilityConfigs = [
   {
-    title: "Mobile Engineering",
-    description:
-      "Construção de apps com experiência de uso coerente, integração real e visão de ciclo completo até publicação.",
+    key: "mobileEngineering",
     icon: "mobile",
-    items: ["Flutter", "Dart", "React Native", "Firebase", "FCM", "Android/iOS"],
   },
   {
-    title: "Front-end & SaaS",
-    description:
-      "Interfaces para produto, onboarding, navegação, temas dinâmicos e white label com base escalável.",
+    key: "frontEndSaas",
     icon: "frontend",
-    items: ["Angular", "TypeScript", "React", "Next.js", "Tailwind", "shadcn/ui"],
   },
   {
-    title: "Arquitetura & Qualidade",
-    description:
-      "Organização para manter clareza de código, previsibilidade de evolução e menos atrito na manutenção.",
+    key: "architectureQuality",
     icon: "architecture",
-    items: ["Clean Architecture", "MVVM", "Modular", "BLoC", "QA", "CI/CD"],
   },
   {
-    title: "Produto & Negócio",
-    description:
-      "Leitura de problema, contexto e conversão para construir soluções melhores antes, durante e depois da entrega.",
+    key: "productBusiness",
     icon: "product",
-    items: ["UX", "Métricas", "Conversão", "White label", "Multi-tenant", "Landing pages"],
   },
-];
+] as const satisfies ReadonlyArray<{
+  key: keyof typeof content.capabilities.items;
+  icon: Capability["icon"];
+}>;
+
+export const capabilities: Capability[] = capabilityConfigs.map(({ key, ...config }) => ({
+  ...content.capabilities.items[key],
+  ...config,
+}));

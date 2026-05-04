@@ -1,4 +1,28 @@
 export type SiteContent = {
+  capabilities: {
+    items: {
+      mobileEngineering: {
+        title: string;
+        description: string;
+        items: string[];
+      };
+      frontEndSaas: {
+        title: string;
+        description: string;
+        items: string[];
+      };
+      architectureQuality: {
+        title: string;
+        description: string;
+        items: string[];
+      };
+      productBusiness: {
+        title: string;
+        description: string;
+        items: string[];
+      };
+    };
+  };
   site: {
     metadata: {
       title: string;
@@ -12,6 +36,10 @@ export type SiteContent = {
     };
   };
   common: {
+    person: {
+      location: string;
+      education: string;
+    };
     actions: {
       contact: string;
       viewProjects: string;
@@ -24,14 +52,24 @@ export type SiteContent = {
   };
   hero: {
     badge: string;
+    title: string;
+    subtitle: string;
     profilePhotoAlt: string;
     productDeliveryBadge: string;
     productionLabel: string;
     publishedAppsLabel: string;
     scaleLabel: string;
     whiteLabelSaasLabel: string;
+    metrics: Array<{
+      id: string;
+      value: string;
+      label: string;
+      description: string;
+    }>;
   };
   about: {
+    quote: string;
+    differentiators: string[];
     baseInBrazil: string;
     educationAligned: string;
     workGuidanceTitle: string;
@@ -51,6 +89,44 @@ export type SiteContent = {
     labels: {
       productStrengthLabel: string;
     };
+    items: {
+      atlas: {
+        company: string;
+        role: string;
+        category: string;
+        summary: string;
+        highlights: string[];
+        whyItMatters: string;
+        tags: string[];
+      };
+      slingui: {
+        company: string;
+        role: string;
+        category: string;
+        summary: string;
+        highlights: string[];
+        whyItMatters: string;
+        tags: string[];
+      };
+      gocoffee: {
+        company: string;
+        role: string;
+        category: string;
+        summary: string;
+        highlights: string[];
+        whyItMatters: string;
+        tags: string[];
+      };
+      marcondes: {
+        company: string;
+        role: string;
+        category: string;
+        summary: string;
+        highlights: string[];
+        whyItMatters: string;
+        tags: string[];
+      };
+    };
   };
   projects: {
     labels: {
@@ -61,10 +137,116 @@ export type SiteContent = {
     carousel: {
       roleDescription: string;
     };
+    items: {
+      poAgentOpenclaw: {
+        name: string;
+        description: string;
+        preview: string;
+        caseStudy: {
+          problem: string;
+          solution: string;
+          impact: string;
+        };
+        tags: string[];
+        status: string;
+        highlight?: string;
+      };
+      sparkSalesSystem: {
+        name: string;
+        description: string;
+        preview: string;
+        caseStudy: {
+          problem: string;
+          solution: string;
+          impact: string;
+        };
+        tags: string[];
+        status: string;
+        highlight?: string;
+      };
+      pdfOcrPostTranscribe: {
+        name: string;
+        description: string;
+        preview: string;
+        caseStudy: {
+          problem: string;
+          solution: string;
+          impact: string;
+        };
+        tags: string[];
+        status: string;
+        highlight?: string;
+      };
+      gocoffeeLandingPage: {
+        name: string;
+        description: string;
+        preview: string;
+        caseStudy: {
+          problem: string;
+          solution: string;
+          impact: string;
+        };
+        tags: string[];
+        status: string;
+        highlight?: string;
+      };
+      currentPortfolio: {
+        name: string;
+        description: string;
+        preview: string;
+        caseStudy: {
+          problem: string;
+          solution: string;
+          impact: string;
+        };
+        tags: string[];
+        status: string;
+        highlight?: string;
+      };
+      seuClimaHoje: {
+        name: string;
+        description: string;
+        preview: string;
+        caseStudy: {
+          problem: string;
+          solution: string;
+          impact: string;
+        };
+        tags: string[];
+        status: string;
+        highlight?: string;
+      };
+    };
   };
   workMethod: {
     labels: {
       step: string;
+    };
+    items: {
+      understandProblem: {
+        title: string;
+        kicker: string;
+        description: string;
+        outcome: string;
+      };
+      structureSolution: {
+        title: string;
+        kicker: string;
+        description: string;
+        outcome: string;
+      };
+      buildWithQuality: {
+        title: string;
+        kicker: string;
+        description: string;
+        outcome: string;
+      };
+      validateTestEvolve: {
+        title: string;
+        kicker: string;
+        description: string;
+        outcome: string;
+      };
     };
   };
   beyondCode: {
@@ -72,6 +254,38 @@ export type SiteContent = {
       humanNarrative: string;
       softSkillsHighlight: string;
       strategicDifferential: string;
+    };
+    items: {
+      devprDevParana: {
+        organization: string;
+        role: string;
+        category: string;
+        summary: string;
+        narrative: string;
+        highlights: string[];
+        strategicValue: string;
+        softSkills: string[];
+        tags: string[];
+      };
+      grupoEscoteiroAldeiaVerde: {
+        organization: string;
+        role: string;
+        category: string;
+        summary: string;
+        narrative: string;
+        highlights: string[];
+        strategicValue: string;
+        softSkills: string[];
+        tags: string[];
+      };
+    };
+  };
+  socialLinks: {
+    labels: {
+      linkedin: string;
+      github: string;
+      email: string;
+      whatsapp: string;
     };
   };
   sections: {

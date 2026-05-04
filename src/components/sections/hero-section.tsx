@@ -7,7 +7,6 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { ExternalLinkButton } from "@/components/shared/external-link-button";
 import { Reveal } from "@/components/shared/reveal";
 import { Badge } from "@/components/ui/badge";
-import { metrics } from "@/data/metrics";
 import { profile } from "@/data/profile";
 import { content } from "@/i18n";
 
@@ -29,10 +28,10 @@ export function HeroSection() {
 
           <div className="space-y-5">
             <h1 className="text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              {profile.heroTitle}
+              {content.hero.title}
             </h1>
             <p className="max-w-2xl text-pretty text-base leading-8 text-muted-foreground sm:text-lg">
-              {profile.heroSubtitle}
+              {content.hero.subtitle}
             </p>
           </div>
 
@@ -57,8 +56,8 @@ export function HeroSection() {
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {metrics.map((metric, index) => (
-              <Reveal key={metric.label} delay={0.06 * (index + 1)}>
+            {content.hero.metrics.map(({ id, ...metric }, index) => (
+              <Reveal key={id} delay={0.06 * (index + 1)}>
                 <MetricCard {...metric} />
               </Reveal>
             ))}
@@ -83,10 +82,10 @@ export function HeroSection() {
                 <div className="mt-4 flex items-end justify-between gap-3 sm:mt-5">
                   <div className="space-y-1">
                     <p className="text-lg font-semibold tracking-[-0.02em] text-foreground sm:text-[1.15rem]">
-                      {profile.name}
+                      {content.site.brand.fullName}
                     </p>
                     <p className="text-sm text-muted-foreground/90">
-                      {profile.location}
+                      {content.common.person.location}
                     </p>
                   </div>
                   <Badge
