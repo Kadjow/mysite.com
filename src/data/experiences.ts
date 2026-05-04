@@ -2,7 +2,7 @@ export type Experience = {
   company: string;
   role: string;
   category: string;
-  icon: "atlas" | "slingui" | "gocoffee" | "marcondes" | "devpr" | "escotismo";
+  icon: "atlas" | "slingui" | "gocoffee" | "marcondes";
   summary: string;
   highlights: string[];
   whyItMatters: string;
@@ -75,35 +75,5 @@ export const experiences: Experience[] = [
     whyItMatters:
       "Ajuda a construir interfaces e produtos com mais consciência de conversão, clareza de mensagem e leitura de métricas.",
     tags: ["ROI", "Conversão", "Analytics", "A/B", "Landing pages"],
-  },
-  {
-    company: "DevPR / DevParaná",
-    role: "Comunidade e organização de meetups",
-    category: "Comunidade / Networking",
-    icon: "devpr",
-    summary:
-      "Envolvimento com encontros técnicos, conexão entre pessoas e fortalecimento de comunidade local.",
-    highlights: [
-      "Organização de meetups técnicos e apoio na divulgação da comunidade.",
-      "Fomento de networking e troca de repertório entre profissionais da área.",
-    ],
-    whyItMatters:
-      "Reforça colaboração, comunicação e presença em comunidade, algo importante para crescer com outras pessoas e não só sozinho.",
-    tags: ["Comunidade", "Eventos", "Networking"],
-  },
-  {
-    company: "Grupo Escoteiro Aldeia Verde",
-    role: "Escotismo e mentoria",
-    category: "Disciplina / Valores",
-    icon: "escotismo",
-    summary:
-      "Vivência contínua desde 2016, com formação em liderança, mentoria, trabalho em equipe e responsabilidade.",
-    highlights: [
-      "Escotismo desde 2016 com destaque para o título de Escoteiro da Pátria.",
-      "Vivência em mentoria, organização, tomada de decisão e colaboração em grupo.",
-    ],
-    whyItMatters:
-      "Sustenta uma camada humana importante: constância, responsabilidade, autonomia e capacidade de conduzir gente e contexto.",
-    tags: ["Disciplina", "Mentoria", "Trabalho em equipe", "Responsabilidade"],
   },
 ];

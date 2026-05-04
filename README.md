@@ -83,7 +83,7 @@ src/
   styles/
     tokens.css
 public/
-  diogo-arthur-gulhak-curriculo.html
+  diogo-arthur-gulhak-curriculo.pdf
 ```
 
 ## Decisões de Design System
@@ -100,13 +100,12 @@ public/
 - Hero forte com métricas, CTAs e foto local.
 - Seções de sobre, experiência, projetos, capacidades, método, fora do código e CTA final.
 - Projetos e experiências renderizados a partir de `src/data`.
-- Currículo em arquivo HTML para download inicial na V1.
+- Currículo em PDF estático para download direto.
 
 ## Próximos passos para V2
 
 - Adicionar screenshots reais por projeto em `src/assets/images/projects`.
 - Publicar a V1 e trocar o link do projeto "novo portfólio" para a versão online.
-- Substituir o currículo HTML por PDF final revisado.
 - Incluir estudos de caso mais profundos para Atlas, Slingui, Spark e PO Agent.
 - Adicionar analytics, SEO expandido e Open Graph customizado.
 - Refinar microinterações e validação visual no browser após deploy.

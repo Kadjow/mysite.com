@@ -1,32 +1,24 @@
-import {
-  BriefcaseBusiness,
-  Coffee,
-  Megaphone,
-  Smartphone,
-  type LucideIcon,
-} from "lucide-react";
+import { Flag, Users, type LucideIcon } from "lucide-react";
 
-import type { Experience } from "@/data/experiences";
 import { TagList } from "@/components/shared/tag-list";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import type { BeyondCodeExperience } from "@/data/beyond-code";
 
-const iconMap: Record<Experience["icon"], LucideIcon> = {
-  atlas: Smartphone,
-  slingui: BriefcaseBusiness,
-  gocoffee: Coffee,
-  marcondes: Megaphone,
+const iconMap: Record<BeyondCodeExperience["icon"], LucideIcon> = {
+  community: Users,
+  scouting: Flag,
 };
 
-type ExperienceCardProps = {
-  experience: Experience;
+type BeyondCodeCardProps = {
+  experience: BeyondCodeExperience;
 };
 
-export function ExperienceCard({ experience }: ExperienceCardProps) {
+export function BeyondCodeCard({ experience }: BeyondCodeCardProps) {
   const Icon = iconMap[experience.icon];
 
   return (
-    <Card className="surface-card rounded-[1.8rem] py-0 transition-[transform,border-color,box-shadow,background-color] duration-300 ease-out motion-reduce:transform-none motion-reduce:transition-none hover:-translate-y-0.5 hover:border-border/90 hover:shadow-[var(--shadow-soft)]">
+    <Card className="surface-card rounded-[1.8rem] py-0 transition-all duration-300 ease-out motion-reduce:transform-none motion-reduce:transition-none hover:-translate-y-1 hover:border-border/90 hover:shadow-[var(--shadow-soft)]">
       <CardContent className="space-y-5 px-6 py-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="space-y-3">
@@ -36,12 +28,12 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
               </span>
               <div>
                 <p className="text-lg font-semibold text-foreground">
-                  {experience.company}
+                  {experience.organization}
                 </p>
                 <p className="text-sm text-muted-foreground">{experience.role}</p>
               </div>
             </div>
-            <p className="text-sm leading-7 text-muted-foreground">
+            <p className="text-sm leading-7 text-muted-foreground transition-colors duration-300 ease-out group-hover/card:text-muted-foreground/90 motion-reduce:transition-none">
               {experience.summary}
             </p>
           </div>
@@ -53,6 +45,15 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
           </Badge>
         </div>
 
+        <div className="rounded-[1.35rem] border border-border/70 bg-background/55 p-4 transition-[border-color,background-color] duration-300 ease-out group-hover/card:border-border/85 group-hover/card:bg-background/68 motion-reduce:transition-none">
+          <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            Narrativa humana
+          </p>
+          <p className="mt-2 text-sm leading-7 text-foreground/88">
+            {experience.narrative}
+          </p>
+        </div>
+
         <ul className="grid gap-3 text-sm leading-7 text-foreground/88">
           {experience.highlights.map((highlight) => (
             <li key={highlight} className="flex gap-3">
@@ -62,16 +63,29 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
           ))}
         </ul>
 
+        <div className="space-y-3">
+          <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            Soft skills em evidência
+          </p>
+          <TagList
+            items={experience.softSkills}
+            className="transition-all duration-300 ease-out motion-reduce:transition-none group-hover/card:[&_[data-slot=badge]]:border-border/90 group-hover/card:[&_[data-slot=badge]]:bg-background/80 group-hover/card:[&_[data-slot=badge]]:text-foreground/80 group-hover/card:[&_[data-slot=badge]]:shadow-[0_12px_28px_-22px_var(--surface-glow)]"
+          />
+        </div>
+
         <div className="rounded-[1.35rem] border border-border/70 bg-background/55 p-4 transition-[border-color,background-color] duration-300 ease-out group-hover/card:border-border/85 group-hover/card:bg-background/68 motion-reduce:transition-none">
           <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-            Como isso fortalece produto
+            Diferencial estratégico
           </p>
           <p className="mt-2 text-sm leading-7 text-foreground/88">
-            {experience.whyItMatters}
+            {experience.strategicValue}
           </p>
         </div>
 
-        <TagList items={experience.tags} />
+        <TagList
+          items={experience.tags}
+          className="transition-all duration-300 ease-out motion-reduce:transition-none group-hover/card:[&_[data-slot=badge]]:border-border/90 group-hover/card:[&_[data-slot=badge]]:bg-background/80 group-hover/card:[&_[data-slot=badge]]:text-foreground/80 group-hover/card:[&_[data-slot=badge]]:shadow-[0_12px_28px_-22px_var(--surface-glow)]"
+        />
       </CardContent>
     </Card>
   );

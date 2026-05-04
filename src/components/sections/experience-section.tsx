@@ -10,9 +10,9 @@ export function ExperienceSection() {
       <div className="space-y-10">
         <Reveal>
           <SectionHeading
-            eyebrow="Experiência"
-            title="Uma trajetória que conecta software, operação, conversão, liderança e comunidade."
-            description="As experiências mais fortes não aparecem só na stack. Elas aparecem na forma de tomar decisão, organizar contexto, lidar com gente, priorizar entrega e transformar necessidade real em produto melhor."
+            eyebrow="Experiência profissional"
+            title="Uma trajetória orientada a produto, entrega e operação em contexto real."
+            description="A experiência principal concentra a carreira formal: software, produto, operação e conversão aplicados a ambientes com responsabilidade de execução, impacto de negócio e qualidade de entrega."
           />
         </Reveal>
 

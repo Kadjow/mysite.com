@@ -1,10 +1,10 @@
 import { ArrowUpRight, CircleDot, FolderGit2 } from "lucide-react";
 
-import type { Project } from "@/data/projects";
 import { ExternalLinkButton } from "@/components/shared/external-link-button";
 import { TagList } from "@/components/shared/tag-list";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
 const toneMap = {
@@ -52,9 +52,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
         </div>
 
         <div className="space-y-3">
-          <h3 className="text-2xl font-semibold tracking-tight text-foreground">
-            {project.name}
-          </h3>
+          <h3 className="text-2xl font-semibold tracking-tight text-foreground">{project.name}</h3>
           <p className="text-sm leading-7 text-muted-foreground sm:text-[0.98rem]">
             {project.description}
           </p>
@@ -62,11 +60,9 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
 
         <div className="rounded-[1.5rem] border border-border/70 bg-background/65 p-4">
           <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-            Problema resolvido
+            Problema
           </p>
-          <p className="mt-2 text-sm leading-7 text-foreground/88">
-            {project.problemSolved}
-          </p>
+          <p className="mt-2 text-sm leading-7 text-foreground/88">{project.caseStudy.problem}</p>
         </div>
 
         <TagList items={project.tags} />

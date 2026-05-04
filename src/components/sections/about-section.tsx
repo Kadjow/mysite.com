@@ -1,9 +1,8 @@
-import { CheckCircle2, MapPin, School } from "lucide-react";
+import { CheckCircle2, GraduationCap, MapPin } from "lucide-react";
 
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { TagList } from "@/components/shared/tag-list";
 import { Card, CardContent } from "@/components/ui/card";
 import { profile } from "@/data/profile";
 
@@ -21,7 +20,7 @@ export function AboutSection() {
 
         <Reveal delay={0.06}>
           <Card className="surface-card rounded-[2rem] py-0">
-            <CardContent className="space-y-6 px-6 py-6 sm:px-7 sm:py-7">
+            <CardContent className="space-y-6 px-6 pt-6 pb-7 sm:px-7 sm:pt-7 sm:pb-8">
               <p className="display-title text-2xl leading-[1.35] text-foreground sm:text-3xl">
                 “{profile.aboutQuote}”
               </p>
@@ -38,9 +37,9 @@ export function AboutSection() {
                 </div>
 
                 <div className="rounded-[1.4rem] border border-border/70 bg-background/60 p-4">
-                  <div className="flex items-center gap-3 text-sm font-medium text-foreground">
-                    <School className="size-4 text-accent" />
-                    {profile.education}
+                  <div className="flex items-start gap-3 text-sm font-medium text-foreground">
+                    <GraduationCap className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                    <span>{profile.education}</span>
                   </div>
                   <p className="mt-2 text-sm leading-7 text-muted-foreground">
                     Formação alinhada com prática profissional e entrega em produção.
@@ -61,8 +60,6 @@ export function AboutSection() {
                   ))}
                 </ul>
               </div>
-
-              <TagList items={[...profile.signatureAreas]} />
             </CardContent>
           </Card>
         </Reveal>

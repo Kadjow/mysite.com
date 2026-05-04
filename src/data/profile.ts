@@ -25,7 +25,7 @@ export const profile = {
   finalCtaTitle: "Quer construir algo bem feito?",
   finalCtaText:
     "Se você procura alguém para desenvolver, evoluir ou organizar um produto digital com qualidade técnica e visão de negócio, vamos conversar.",
-  resumeHref: "/diogo-arthur-gulhak-curriculo.html",
+  resumeUrl: "/diogo-arthur-gulhak-curriculo.pdf",
   footerNote: "Desenvolvedor orientado a produto, com entrega real e clareza de execução.",
   humanFacets: [
     {
