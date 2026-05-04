@@ -27,11 +27,29 @@ export const ptBR = {
   common: {
     actions: {
       contact: "Falar comigo",
+      viewProjects: "Ver projetos",
+      downloadResume: "Baixar currículo",
     },
     accessibility: {
       toggleTheme: "Alternar tema",
       openMenu: "Abrir menu",
     },
+  },
+  hero: {
+    badge: "Mobile, front-end, arquitetura e produto",
+    profilePhotoAlt: "Foto profissional de Diogo Arthur Gulhak",
+    productDeliveryBadge: "Produto + entrega",
+    productionLabel: "Produção real",
+    publishedAppsLabel: "4 apps publicados",
+    scaleLabel: "Escala",
+    whiteLabelSaasLabel: "White label + SaaS",
+  },
+  about: {
+    baseInBrazil:
+      "Base no Brasil, com experiência em produtos digitais, operação e comunicação.",
+    educationAligned:
+      "Formação alinhada com prática profissional e entrega em produção.",
+    workGuidanceTitle: "O que orienta meu trabalho",
   },
   navigation: {
     items: {
@@ -43,6 +61,33 @@ export const ptBR = {
       contact: "Contato",
     },
     mobileDescription: "Navegação principal do portfólio.",
+  },
+  experience: {
+    labels: {
+      productStrengthLabel: "Como isso fortalece produto",
+    },
+  },
+  projects: {
+    labels: {
+      github: "GitHub",
+      demo: "Demo",
+      case: "Case",
+    },
+    carousel: {
+      roleDescription: "carousel",
+    },
+  },
+  workMethod: {
+    labels: {
+      step: "Etapa",
+    },
+  },
+  beyondCode: {
+    labels: {
+      humanNarrative: "Narrativa humana",
+      softSkillsHighlight: "Soft skills em evidência",
+      strategicDifferential: "Diferencial estratégico",
+    },
   },
   sections: {
     about: {

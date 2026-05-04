@@ -33,7 +33,7 @@ export function AboutSection() {
                     {profile.location}
                   </div>
                   <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                    Base no Brasil, com experiência em produtos digitais, operação e comunicação.
+                    {content.about.baseInBrazil}
                   </p>
                 </div>
 
@@ -43,14 +43,14 @@ export function AboutSection() {
                     <span>{profile.education}</span>
                   </div>
                   <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                    Formação alinhada com prática profissional e entrega em produção.
+                    {content.about.educationAligned}
                   </p>
                 </div>
               </div>
 
               <div className="space-y-3">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                  O que orienta meu trabalho
+                  {content.about.workGuidanceTitle}
                 </p>
                 <ul className="grid gap-3 text-sm leading-7 text-foreground/88">
                   {profile.differentiators.map((item) => (

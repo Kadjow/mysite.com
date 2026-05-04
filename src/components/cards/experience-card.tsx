@@ -10,6 +10,7 @@ import type { Experience } from "@/data/experiences";
 import { TagList } from "@/components/shared/tag-list";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { content } from "@/i18n";
 
 const iconMap: Record<Experience["icon"], LucideIcon> = {
   atlas: Smartphone,
@@ -64,7 +65,7 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
 
         <div className="rounded-[1.35rem] border border-border/70 bg-background/55 p-4 transition-[border-color,background-color] duration-300 ease-out group-hover/card:border-border/85 group-hover/card:bg-background/68 motion-reduce:transition-none">
           <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-            Como isso fortalece produto
+            {content.experience.labels.productStrengthLabel}
           </p>
           <p className="mt-2 text-sm leading-7 text-foreground/88">
             {experience.whyItMatters}

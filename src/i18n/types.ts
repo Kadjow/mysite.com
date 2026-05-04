@@ -14,11 +14,27 @@ export type SiteContent = {
   common: {
     actions: {
       contact: string;
+      viewProjects: string;
+      downloadResume: string;
     };
     accessibility: {
       toggleTheme: string;
       openMenu: string;
     };
+  };
+  hero: {
+    badge: string;
+    profilePhotoAlt: string;
+    productDeliveryBadge: string;
+    productionLabel: string;
+    publishedAppsLabel: string;
+    scaleLabel: string;
+    whiteLabelSaasLabel: string;
+  };
+  about: {
+    baseInBrazil: string;
+    educationAligned: string;
+    workGuidanceTitle: string;
   };
   navigation: {
     items: {
@@ -30,6 +46,33 @@ export type SiteContent = {
       contact: string;
     };
     mobileDescription: string;
+  };
+  experience: {
+    labels: {
+      productStrengthLabel: string;
+    };
+  };
+  projects: {
+    labels: {
+      github: string;
+      demo: string;
+      case: string;
+    };
+    carousel: {
+      roleDescription: string;
+    };
+  };
+  workMethod: {
+    labels: {
+      step: string;
+    };
+  };
+  beyondCode: {
+    labels: {
+      humanNarrative: string;
+      softSkillsHighlight: string;
+      strategicDifferential: string;
+    };
   };
   sections: {
     about: {

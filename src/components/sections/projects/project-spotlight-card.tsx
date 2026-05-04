@@ -122,19 +122,19 @@ export function ProjectSpotlightCard({
             <div className="mt-auto flex flex-wrap gap-3 pt-2">
               {project.repoUrl ? (
                 <ExternalLinkButton href={project.repoUrl} variant="outline" size="default">
-                  GitHub
+                  {content.projects.labels.github}
                   <FolderGit2 />
                 </ExternalLinkButton>
               ) : null}
               {project.demoUrl ? (
                 <ExternalLinkButton href={project.demoUrl} variant="default" size="default">
-                  Demo
+                  {content.projects.labels.demo}
                   <ArrowUpRight />
                 </ExternalLinkButton>
               ) : null}
               {project.caseUrl ? (
                 <ExternalLinkButton href={project.caseUrl} variant="secondary" size="default">
-                  Case
+                  {content.projects.labels.case}
                   <FileText />
                 </ExternalLinkButton>
               ) : null}

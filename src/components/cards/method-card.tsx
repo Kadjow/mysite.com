@@ -1,5 +1,6 @@
 import type { WorkMethodItem } from "@/data/work-method";
 import { Card, CardContent } from "@/components/ui/card";
+import { content } from "@/i18n";
 
 type MethodCardProps = {
   item: WorkMethodItem;
@@ -11,7 +12,7 @@ export function MethodCard({ item }: MethodCardProps) {
       <CardContent className="space-y-4 px-6 py-6">
         <div className="flex items-center justify-between gap-3">
           <span className="eyebrow transition-colors duration-300 ease-out group-hover/card:text-foreground/80 motion-reduce:transition-none">
-            Etapa {item.step}
+            {content.workMethod.labels.step} {item.step}
           </span>
           <span className="rounded-full border border-border/65 bg-muted/75 px-3 py-1 text-xs font-medium text-muted-foreground transition-all duration-300 ease-out group-hover/card:border-border/90 group-hover/card:bg-background/80 group-hover/card:text-foreground/80 group-hover/card:shadow-[0_12px_28px_-22px_var(--surface-glow)] motion-reduce:transition-none">
             {item.kicker}

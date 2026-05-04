@@ -92,7 +92,7 @@ export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselP
   return (
     <div
       role="region"
-      aria-roledescription="carousel"
+      aria-roledescription={content.projects.carousel.roleDescription}
       aria-label={content.projectSpotlight.carouselAriaLabel}
       tabIndex={projectCount > 1 ? 0 : -1}
       onKeyDown={(event) => {

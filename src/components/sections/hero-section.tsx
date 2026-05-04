@@ -9,6 +9,7 @@ import { Reveal } from "@/components/shared/reveal";
 import { Badge } from "@/components/ui/badge";
 import { metrics } from "@/data/metrics";
 import { profile } from "@/data/profile";
+import { content } from "@/i18n";
 
 export function HeroSection() {
   return (
@@ -23,7 +24,7 @@ export function HeroSection() {
             variant="outline"
             className="rounded-full border-border/70 bg-background/70 px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.24em] text-muted-foreground"
           >
-            Mobile, front-end, arquitetura e produto
+            {content.hero.badge}
           </Badge>
 
           <div className="space-y-5">
@@ -37,11 +38,11 @@ export function HeroSection() {
 
           <div className="flex flex-wrap gap-3">
             <ExternalLinkButton href="#projetos" variant="default">
-              Ver projetos
+              {content.common.actions.viewProjects}
               <ArrowRight />
             </ExternalLinkButton>
             <ExternalLinkButton href="#contato" variant="outline">
-              Falar comigo
+              {content.common.actions.contact}
               <MessageCircleMore />
             </ExternalLinkButton>
             <ExternalLinkButton
@@ -50,7 +51,7 @@ export function HeroSection() {
               className="border border-border/70 bg-background/65"
               download
             >
-              Baixar currículo
+              {content.common.actions.downloadResume}
               <Download />
             </ExternalLinkButton>
           </div>
@@ -74,7 +75,7 @@ export function HeroSection() {
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,transparent,oklch(0.18_0.02_250_/_0.26))]" />
                   <Image
                     src={profileImage}
-                    alt="Foto profissional de Diogo Arthur Gulhak"
+                    alt={content.hero.profilePhotoAlt}
                     preload
                     className="aspect-[7/9] w-full object-cover object-[82%_center]"
                   />
@@ -92,26 +93,26 @@ export function HeroSection() {
                     variant="outline"
                     className="h-auto shrink-0 rounded-full border-border/70 bg-background/88 px-3 py-1.5 text-[0.72rem] font-semibold text-foreground shadow-[0_12px_30px_-24px_rgba(15,23,42,0.9)] backdrop-blur-md hover:bg-background/95"
                   >
-                    Produto + entrega
+                    {content.hero.productDeliveryBadge}
                   </Badge>
                 </div>
               </div>
 
               <div className="absolute left-3 top-3 z-10 rounded-2xl border border-border/65 bg-background/84 px-3.5 py-2.5 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.9)] backdrop-blur-md sm:left-4 sm:top-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                  Produção real
+                  {content.hero.productionLabel}
                 </p>
                 <p className="mt-1 text-sm font-medium text-foreground">
-                  4 apps publicados
+                  {content.hero.publishedAppsLabel}
                 </p>
               </div>
 
               <div className="absolute bottom-28 right-3 z-10 rounded-2xl border border-border/65 bg-background/84 px-3.5 py-2.5 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.9)] backdrop-blur-md sm:bottom-32 sm:right-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                  Escala
+                  {content.hero.scaleLabel}
                 </p>
                 <p className="mt-1 text-sm font-medium text-foreground">
-                  White label + SaaS
+                  {content.hero.whiteLabelSaasLabel}
                 </p>
               </div>
             </div>
