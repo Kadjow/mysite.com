@@ -1,4 +1,4 @@
-import { content } from "@/i18n";
+import type { SiteContent } from "@/i18n";
 
 export type Capability = {
   title: string;
@@ -25,11 +25,13 @@ const capabilityConfigs = [
     icon: "product",
   },
 ] as const satisfies ReadonlyArray<{
-  key: keyof typeof content.capabilities.items;
+  key: keyof SiteContent["capabilities"]["items"];
   icon: Capability["icon"];
 }>;
 
-export const capabilities: Capability[] = capabilityConfigs.map(({ key, ...config }) => ({
-  ...content.capabilities.items[key],
-  ...config,
-}));
+export function getCapabilities(content: SiteContent): Capability[] {
+  return capabilityConfigs.map(({ key, ...config }) => ({
+    ...content.capabilities.items[key],
+    ...config,
+  }));
+}

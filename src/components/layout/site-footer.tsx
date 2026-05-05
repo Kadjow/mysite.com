@@ -1,8 +1,13 @@
-import { socialLinks } from "@/data/social-links";
-import { content } from "@/i18n";
+import { getSocialLinks } from "@/data/social-links";
+import type { SiteContent } from "@/i18n";
 
-export function SiteFooter() {
+type SiteFooterProps = {
+  content: SiteContent;
+};
+
+export function SiteFooter({ content }: SiteFooterProps) {
   const year = new Date().getFullYear();
+  const socialLinks = getSocialLinks(content);
 
   return (
     <footer className="border-t border-border/60">

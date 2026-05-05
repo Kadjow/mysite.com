@@ -1,4 +1,4 @@
-import { content } from "@/i18n";
+import type { SiteContent } from "@/i18n";
 
 export type BeyondCodeExperience = {
   organization: string;
@@ -23,13 +23,15 @@ const beyondCodeConfigs = [
     icon: "scouting",
   },
 ] as const satisfies ReadonlyArray<{
-  key: keyof typeof content.beyondCode.items;
+  key: keyof SiteContent["beyondCode"]["items"];
   icon: BeyondCodeExperience["icon"];
 }>;
 
-export const beyondCodeExperiences: BeyondCodeExperience[] = beyondCodeConfigs.map(
-  ({ key, ...config }) => ({
+export function getBeyondCodeExperiences(
+  content: SiteContent,
+): BeyondCodeExperience[] {
+  return beyondCodeConfigs.map(({ key, ...config }) => ({
     ...content.beyondCode.items[key],
     ...config,
-  }),
-);
+  }));
+}

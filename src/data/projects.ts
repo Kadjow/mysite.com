@@ -1,4 +1,4 @@
-import { content } from "@/i18n";
+import type { SiteContent } from "@/i18n";
 
 export type ProjectCaseStudy = {
   problem: string;
@@ -59,7 +59,7 @@ const projectConfigs = [
     repoUrl: "https://github.com/Kadjow/Seu-Clima-Hoje",
   },
 ] as const satisfies ReadonlyArray<{
-  key: keyof typeof content.projects.items;
+  key: keyof SiteContent["projects"]["items"];
   tone: Project["tone"];
   featured: Project["featured"];
   repoUrl?: Project["repoUrl"];
@@ -67,10 +67,12 @@ const projectConfigs = [
   caseUrl?: Project["caseUrl"];
 }>;
 
-export const projects: Project[] = projectConfigs.map(({ key, ...config }) => ({
-  ...content.projects.items[key],
-  caseStudy: {
-    ...content.projects.items[key].caseStudy,
-  },
-  ...config,
-}));
+export function getProjects(content: SiteContent): Project[] {
+  return projectConfigs.map(({ key, ...config }) => ({
+    ...content.projects.items[key],
+    caseStudy: {
+      ...content.projects.items[key].caseStudy,
+    },
+    ...config,
+  }));
+}

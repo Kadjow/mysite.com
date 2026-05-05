@@ -1,4 +1,4 @@
-import { content } from "@/i18n";
+import type { SiteContent } from "@/i18n";
 
 export type WorkMethodItem = {
   step: string;
@@ -26,11 +26,13 @@ const workMethodConfigs = [
     step: "04",
   },
 ] as const satisfies ReadonlyArray<{
-  key: keyof typeof content.workMethod.items;
+  key: keyof SiteContent["workMethod"]["items"];
   step: WorkMethodItem["step"];
 }>;
 
-export const workMethod: WorkMethodItem[] = workMethodConfigs.map(({ key, ...config }) => ({
-  ...config,
-  ...content.workMethod.items[key],
-}));
+export function getWorkMethod(content: SiteContent): WorkMethodItem[] {
+  return workMethodConfigs.map(({ key, ...config }) => ({
+    ...config,
+    ...content.workMethod.items[key],
+  }));
+}

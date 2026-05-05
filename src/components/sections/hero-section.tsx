@@ -8,9 +8,13 @@ import { ExternalLinkButton } from "@/components/shared/external-link-button";
 import { Reveal } from "@/components/shared/reveal";
 import { Badge } from "@/components/ui/badge";
 import { profile } from "@/data/profile";
-import { content } from "@/i18n";
+import type { SiteContent } from "@/i18n";
 
-export function HeroSection() {
+type HeroSectionProps = {
+  content: SiteContent;
+};
+
+export function HeroSection({ content }: HeroSectionProps) {
   return (
     <SectionWrapper
       id="inicio"

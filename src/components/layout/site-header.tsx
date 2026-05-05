@@ -1,5 +1,6 @@
 import { Menu, MessageCircleMore } from "lucide-react";
 
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,18 +11,23 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { content } from "@/i18n";
+import type { Locale, SiteContent } from "@/i18n";
 
-const navItems = [
-  { label: content.navigation.items.home, href: "#inicio" },
-  { label: content.navigation.items.about, href: "#sobre" },
-  { label: content.navigation.items.experience, href: "#experiencia" },
-  { label: content.navigation.items.projects, href: "#projetos" },
-  { label: content.navigation.items.stack, href: "#stack" },
-  { label: content.navigation.items.contact, href: "#contato" },
-];
+type SiteHeaderProps = {
+  content: SiteContent;
+  locale: Locale;
+};
 
-export function SiteHeader() {
+export function SiteHeader({ content, locale }: SiteHeaderProps) {
+  const navItems = [
+    { label: content.navigation.items.home, href: "#inicio" },
+    { label: content.navigation.items.about, href: "#sobre" },
+    { label: content.navigation.items.experience, href: "#experiencia" },
+    { label: content.navigation.items.projects, href: "#projetos" },
+    { label: content.navigation.items.stack, href: "#stack" },
+    { label: content.navigation.items.contact, href: "#contato" },
+  ];
+
   return (
     <header className="sticky top-0 z-40">
       <div className="mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
@@ -53,7 +59,8 @@ export function SiteHeader() {
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
-            <ThemeToggle />
+            <LanguageSwitcher currentLocale={locale} />
+            <ThemeToggle ariaLabel={content.common.accessibility.toggleTheme} />
             <Button asChild className="rounded-full px-5">
               <a href="#contato">
                 {content.common.actions.contact}
@@ -63,7 +70,8 @@ export function SiteHeader() {
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
-            <ThemeToggle />
+            <LanguageSwitcher currentLocale={locale} />
+            <ThemeToggle ariaLabel={content.common.accessibility.toggleTheme} />
             <Sheet>
               <SheetTrigger asChild>
                 <Button

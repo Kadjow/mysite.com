@@ -1,7 +1,9 @@
-import { content } from "@/i18n";
+import type { SiteContent } from "@/i18n";
 
-export const metrics = content.hero.metrics.map((metric) => ({
-  value: metric.value,
-  label: metric.label,
-  description: metric.description,
-}));
+export function getMetrics(content: SiteContent) {
+  return content.hero.metrics.map((metric) => ({
+    value: metric.value,
+    label: metric.label,
+    description: metric.description,
+  }));
+}

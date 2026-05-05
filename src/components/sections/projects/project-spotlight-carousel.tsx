@@ -8,11 +8,14 @@ import { ProjectSpotlightCard } from "@/components/sections/projects/project-spo
 import { Button } from "@/components/ui/button";
 import type { Project } from "@/data/projects";
 import { useProjectCarousel } from "@/hooks/use-project-carousel";
-import { content } from "@/i18n";
+import type { SiteContent } from "@/i18n";
 import { cn } from "@/lib/utils";
 
 type ProjectSpotlightCarouselProps = {
   projects: Project[];
+  roleDescription: SiteContent["projects"]["carousel"]["roleDescription"];
+  projectLabels: SiteContent["projects"]["labels"];
+  spotlight: SiteContent["projectSpotlight"];
 };
 
 type CarouselSlot = {
@@ -27,7 +30,12 @@ const transition = {
   ease: [0.22, 1, 0.36, 1],
 } as const;
 
-export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselProps) {
+export function ProjectSpotlightCarousel({
+  projects,
+  roleDescription,
+  projectLabels,
+  spotlight,
+}: ProjectSpotlightCarouselProps) {
   const reduceMotion = useReducedMotion();
   const {
     activeIndex,
@@ -92,8 +100,8 @@ export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselP
   return (
     <div
       role="region"
-      aria-roledescription={content.projects.carousel.roleDescription}
-      aria-label={content.projectSpotlight.carouselAriaLabel}
+      aria-roledescription={roleDescription}
+      aria-label={spotlight.carouselAriaLabel}
       tabIndex={projectCount > 1 ? 0 : -1}
       onKeyDown={(event) => {
         if (event.key === "ArrowLeft") {
@@ -114,10 +122,10 @@ export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselP
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-2">
             <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
-              {content.projectSpotlight.carouselLabel}
+              {spotlight.carouselLabel}
             </p>
             <p className="max-w-xl text-sm leading-7 text-muted-foreground">
-              {content.projectSpotlight.carouselDescription}
+              {spotlight.carouselDescription}
             </p>
           </div>
 
@@ -129,10 +137,7 @@ export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselP
             >
               {formattedIndex} / {formattedTotal}
               <span className="sr-only">
-                {content.projectSpotlight.currentProjectSrLabel.replace(
-                  "{name}",
-                  activeProject.name,
-                )}
+                {spotlight.currentProjectSrLabel.replace("{name}", activeProject.name)}
               </span>
             </p>
 
@@ -141,7 +146,7 @@ export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselP
                 type="button"
                 variant="outline"
                 size="icon"
-                aria-label={content.projectSpotlight.previousProjectAriaLabel}
+                aria-label={spotlight.previousProjectAriaLabel}
                 onClick={goPrevious}
                 disabled={projectCount < 2}
                 className="rounded-full"
@@ -152,7 +157,7 @@ export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselP
                 type="button"
                 variant="outline"
                 size="icon"
-                aria-label={content.projectSpotlight.nextProjectAriaLabel}
+                aria-label={spotlight.nextProjectAriaLabel}
                 onClick={goNext}
                 disabled={projectCount < 2}
                 className="rounded-full"
@@ -172,7 +177,12 @@ export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselP
               exit={reduceMotion ? undefined : { opacity: 0, y: -14 }}
               transition={transition}
             >
-              <ProjectSpotlightCard project={activeProject} variant="active" />
+              <ProjectSpotlightCard
+                project={activeProject}
+                variant="active"
+                projectLabels={projectLabels}
+                spotlight={spotlight}
+              />
             </motion.div>
           </AnimatePresence>
         </div>
@@ -223,6 +233,8 @@ export function ProjectSpotlightCarousel({ projects }: ProjectSpotlightCarouselP
                     <ProjectSpotlightCard
                       project={slot.project}
                       variant={slot.variant}
+                      projectLabels={projectLabels}
+                      spotlight={spotlight}
                       onSelect={slot.onSelect}
                     />
                   </motion.div>

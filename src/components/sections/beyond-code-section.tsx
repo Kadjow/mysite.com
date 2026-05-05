@@ -2,10 +2,16 @@ import { BeyondCodeCard } from "@/components/cards/beyond-code-card";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { beyondCodeExperiences } from "@/data/beyond-code";
-import { content } from "@/i18n";
+import { getBeyondCodeExperiences } from "@/data/beyond-code";
+import type { SiteContent } from "@/i18n";
 
-export function BeyondCodeSection() {
+type BeyondCodeSectionProps = {
+  content: SiteContent;
+};
+
+export function BeyondCodeSection({ content }: BeyondCodeSectionProps) {
+  const beyondCodeExperiences = getBeyondCodeExperiences(content);
+
   return (
     <SectionWrapper id="alem-do-codigo">
       <div className="space-y-10">
@@ -22,7 +28,10 @@ export function BeyondCodeSection() {
         <div className="grid gap-6 lg:grid-cols-2">
           {beyondCodeExperiences.map((experience, index) => (
             <Reveal key={experience.organization} delay={0.05 * index}>
-              <BeyondCodeCard experience={experience} />
+              <BeyondCodeCard
+                experience={experience}
+                labels={content.beyondCode.labels}
+              />
             </Reveal>
           ))}
         </div>

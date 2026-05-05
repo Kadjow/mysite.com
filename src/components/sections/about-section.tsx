@@ -4,9 +4,13 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
-import { content } from "@/i18n";
+import type { SiteContent } from "@/i18n";
 
-export function AboutSection() {
+type AboutSectionProps = {
+  content: SiteContent;
+};
+
+export function AboutSection({ content }: AboutSectionProps) {
   return (
     <SectionWrapper id="sobre">
       <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12">

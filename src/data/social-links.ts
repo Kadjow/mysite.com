@@ -1,4 +1,4 @@
-import { content } from "@/i18n";
+import type { SiteContent } from "@/i18n";
 
 export type SocialLink = {
   label: string;
@@ -28,12 +28,14 @@ const socialLinkConfigs = [
     icon: "whatsapp",
   },
 ] as const satisfies ReadonlyArray<{
-  key: keyof typeof content.socialLinks.labels;
+  key: keyof SiteContent["socialLinks"]["labels"];
   href: string;
   icon: SocialLink["icon"];
 }>;
 
-export const socialLinks: SocialLink[] = socialLinkConfigs.map(({ key, ...config }) => ({
-  ...config,
-  label: content.socialLinks.labels[key],
-}));
+export function getSocialLinks(content: SiteContent): SocialLink[] {
+  return socialLinkConfigs.map(({ key, ...config }) => ({
+    ...config,
+    label: content.socialLinks.labels[key],
+  }));
+}

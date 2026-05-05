@@ -2,10 +2,16 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { ProjectSpotlightCarousel } from "@/components/sections/projects/project-spotlight-carousel";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { projects } from "@/data/projects";
-import { content } from "@/i18n";
+import { getProjects } from "@/data/projects";
+import type { SiteContent } from "@/i18n";
 
-export function ProjectsSection() {
+type ProjectsSectionProps = {
+  content: SiteContent;
+};
+
+export function ProjectsSection({ content }: ProjectsSectionProps) {
+  const projects = getProjects(content);
+
   return (
     <SectionWrapper id="projetos">
       <div className="space-y-10">
@@ -18,7 +24,12 @@ export function ProjectsSection() {
         </Reveal>
 
         <Reveal delay={0.05}>
-          <ProjectSpotlightCarousel projects={projects} />
+          <ProjectSpotlightCarousel
+            projects={projects}
+            roleDescription={content.projects.carousel.roleDescription}
+            projectLabels={content.projects.labels}
+            spotlight={content.projectSpotlight}
+          />
         </Reveal>
       </div>
     </SectionWrapper>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Geist_Mono, Manrope } from "next/font/google";
 
 import { ThemeProvider } from "@/components/shared/theme-provider";
-import { content } from "@/i18n";
+import { getCurrentContent, getCurrentLocale } from "@/i18n";
 
 import "./globals.css";
 
@@ -21,20 +21,26 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: content.site.metadata.title,
-  description: content.site.metadata.description,
-  keywords: content.site.metadata.keywords,
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { content } = await getCurrentContent();
 
-export default function RootLayout({
+  return {
+    title: content.site.metadata.title,
+    description: content.site.metadata.description,
+    keywords: content.site.metadata.keywords,
+  };
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getCurrentLocale();
+
   return (
     <html
-      lang="pt-BR"
+      lang={locale}
       suppressHydrationWarning
       className={`${manrope.variable} ${fraunces.variable} ${geistMono.variable}`}
     >

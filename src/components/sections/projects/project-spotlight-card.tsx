@@ -5,7 +5,7 @@ import { TagList } from "@/components/shared/tag-list";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Project } from "@/data/projects";
-import { content } from "@/i18n";
+import type { SiteContent } from "@/i18n";
 import { cn } from "@/lib/utils";
 
 const toneMap = {
@@ -20,6 +20,8 @@ const toneMap = {
 type ProjectSpotlightCardProps = {
   project: Project;
   variant: "active" | "preview";
+  projectLabels: SiteContent["projects"]["labels"];
+  spotlight: SiteContent["projectSpotlight"];
   onSelect?: () => void;
   className?: string;
 };
@@ -27,6 +29,8 @@ type ProjectSpotlightCardProps = {
 export function ProjectSpotlightCard({
   project,
   variant,
+  projectLabels,
+  spotlight,
   onSelect,
   className,
 }: ProjectSpotlightCardProps) {
@@ -97,21 +101,21 @@ export function ProjectSpotlightCard({
             <div className="grid gap-3 lg:grid-cols-3">
               <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4">
                 <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  {content.projectSpotlight.problemLabel}
+                  {spotlight.problemLabel}
                 </p>
                 <p className="mt-2 text-sm leading-7 text-foreground/88">{project.caseStudy.problem}</p>
               </div>
 
               <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4">
                 <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  {content.projectSpotlight.solutionLabel}
+                  {spotlight.solutionLabel}
                 </p>
                 <p className="mt-2 text-sm leading-7 text-foreground/88">{project.caseStudy.solution}</p>
               </div>
 
               <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4">
                 <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  {content.projectSpotlight.impactLabel}
+                  {spotlight.impactLabel}
                 </p>
                 <p className="mt-2 text-sm leading-7 text-foreground/88">{project.caseStudy.impact}</p>
               </div>
@@ -122,19 +126,19 @@ export function ProjectSpotlightCard({
             <div className="mt-auto flex flex-wrap gap-3 pt-2">
               {project.repoUrl ? (
                 <ExternalLinkButton href={project.repoUrl} variant="outline" size="default">
-                  {content.projects.labels.github}
+                  {projectLabels.github}
                   <FolderGit2 />
                 </ExternalLinkButton>
               ) : null}
               {project.demoUrl ? (
                 <ExternalLinkButton href={project.demoUrl} variant="default" size="default">
-                  {content.projects.labels.demo}
+                  {projectLabels.demo}
                   <ArrowUpRight />
                 </ExternalLinkButton>
               ) : null}
               {project.caseUrl ? (
                 <ExternalLinkButton href={project.caseUrl} variant="secondary" size="default">
-                  {content.projects.labels.case}
+                  {projectLabels.case}
                   <FileText />
                 </ExternalLinkButton>
               ) : null}
@@ -144,7 +148,7 @@ export function ProjectSpotlightCard({
           <div className="mt-auto flex items-center justify-between gap-3 pt-2 text-xs text-muted-foreground">
             <span className="max-w-[16rem] leading-6">{project.highlight ?? project.preview}</span>
             <span className="shrink-0 uppercase tracking-[0.18em]">
-              {content.projectSpotlight.viewHighlightLabel}
+              {spotlight.viewHighlightLabel}
             </span>
           </div>
         )}
@@ -157,10 +161,7 @@ export function ProjectSpotlightCard({
       <button
         type="button"
         onClick={onSelect}
-        aria-label={content.projectSpotlight.selectProjectAriaLabel.replace(
-          "{name}",
-          project.name,
-        )}
+        aria-label={spotlight.selectProjectAriaLabel.replace("{name}", project.name)}
         className="group block w-full cursor-pointer rounded-[2rem] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
         {contentCard}

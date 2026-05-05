@@ -2,10 +2,16 @@ import { MethodCard } from "@/components/cards/method-card";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { workMethod } from "@/data/work-method";
-import { content } from "@/i18n";
+import { getWorkMethod } from "@/data/work-method";
+import type { SiteContent } from "@/i18n";
 
-export function WorkMethodSection() {
+type WorkMethodSectionProps = {
+  content: SiteContent;
+};
+
+export function WorkMethodSection({ content }: WorkMethodSectionProps) {
+  const workMethod = getWorkMethod(content);
+
   return (
     <SectionWrapper>
       <div className="space-y-10">
@@ -20,7 +26,7 @@ export function WorkMethodSection() {
         <div className="grid gap-6 xl:grid-cols-4">
           {workMethod.map((item, index) => (
             <Reveal key={item.step} delay={0.05 * index}>
-              <MethodCard item={item} />
+              <MethodCard item={item} stepLabel={content.workMethod.labels.step} />
             </Reveal>
           ))}
         </div>

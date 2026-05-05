@@ -2,10 +2,16 @@ import { CapabilityCard } from "@/components/cards/capability-card";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { capabilities } from "@/data/capabilities";
-import { content } from "@/i18n";
+import { getCapabilities } from "@/data/capabilities";
+import type { SiteContent } from "@/i18n";
 
-export function CapabilitiesSection() {
+type CapabilitiesSectionProps = {
+  content: SiteContent;
+};
+
+export function CapabilitiesSection({ content }: CapabilitiesSectionProps) {
+  const capabilities = getCapabilities(content);
+
   return (
     <SectionWrapper id="stack">
       <div className="space-y-10">

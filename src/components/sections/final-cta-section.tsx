@@ -9,17 +9,23 @@ import {
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { ExternalLinkButton } from "@/components/shared/external-link-button";
 import { Reveal } from "@/components/shared/reveal";
-import { socialLinks } from "@/data/social-links";
-import { content } from "@/i18n";
+import { getSocialLinks } from "@/data/social-links";
+import type { SiteContent } from "@/i18n";
 
-const iconMap: Record<(typeof socialLinks)[number]["icon"], LucideIcon> = {
+type FinalCtaSectionProps = {
+  content: SiteContent;
+};
+
+const iconMap = {
   github: FolderGit2,
   linkedin: Link2,
   email: Mail,
   whatsapp: MessageCircleMore,
-};
+} satisfies Record<ReturnType<typeof getSocialLinks>[number]["icon"], LucideIcon>;
 
-export function FinalCtaSection() {
+export function FinalCtaSection({ content }: FinalCtaSectionProps) {
+  const socialLinks = getSocialLinks(content);
+
   return (
     <SectionWrapper id="contato" className="pb-20 sm:pb-24">
       <Reveal>
@@ -54,9 +60,9 @@ export function FinalCtaSection() {
                   <ExternalLinkButton
                     key={link.label}
                     href={link.href}
-                    variant={link.label === "LinkedIn" ? "default" : "outline"}
+                    variant={link.icon === "linkedin" ? "default" : "outline"}
                     className={
-                      link.label === "LinkedIn"
+                      link.icon === "linkedin"
                         ? "transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:brightness-105 group-hover:shadow-[0_18px_32px_-20px_rgba(8,145,178,0.55)]"
                         : "transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:border-cyan-400/30 group-hover:bg-background/90 group-hover:shadow-[0_18px_32px_-22px_rgba(8,145,178,0.4)] dark:group-hover:border-cyan-300/25 dark:group-hover:bg-background/60"
                     }

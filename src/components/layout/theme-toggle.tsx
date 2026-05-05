@@ -1,40 +1,35 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect, useState } from "react";
 import { MoonStar, SunMedium } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
-import { content } from "@/i18n";
 
-function subscribe() {
-  return () => {};
-}
+type ThemeToggleProps = {
+  ariaLabel: string;
+};
 
-function getClientSnapshot() {
-  return true;
-}
-
-function getServerSnapshot() {
-  return false;
-}
-
-export function ThemeToggle() {
+export function ThemeToggle({ ariaLabel }: ThemeToggleProps) {
   const { setTheme, resolvedTheme } = useTheme();
-  const mounted = useSyncExternalStore(
-    subscribe,
-    getClientSnapshot,
-    getServerSnapshot,
-  );
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // Safe mount gate for next-themes to avoid hydration mismatches.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   if (!mounted) {
     return (
       <Button
+        type="button"
         variant="outline"
         size="icon"
         className="rounded-full border-border/70 bg-background/70 backdrop-blur"
-        aria-label={content.common.accessibility.toggleTheme}
+        aria-label={ariaLabel}
         disabled
+        aria-hidden="true"
       >
         <span className="h-5 w-5" aria-hidden="true" />
       </Button>
@@ -45,13 +40,18 @@ export function ThemeToggle() {
 
   return (
     <Button
+      type="button"
       variant="outline"
       size="icon"
       className="rounded-full border-border/70 bg-background/70 backdrop-blur"
-      aria-label={content.common.accessibility.toggleTheme}
+      aria-label={ariaLabel}
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
-      {isDark ? <SunMedium className="h-5 w-5" /> : <MoonStar className="h-5 w-5" />}
+      {isDark ? (
+        <SunMedium className="h-5 w-5" aria-hidden="true" />
+      ) : (
+        <MoonStar className="h-5 w-5" aria-hidden="true" />
+      )}
     </Button>
   );
 }
