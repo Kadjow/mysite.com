@@ -35,85 +35,117 @@ export function ProjectSpotlightCard({
   className,
 }: ProjectSpotlightCardProps) {
   const isActive = variant === "active";
+  const previewClampClass =
+    "overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical]";
 
   const contentCard = (
     <Card
       className={cn(
-        "surface-card mesh-border relative overflow-hidden rounded-[2rem] border-border/75 py-0 text-left transition-[border-color,box-shadow,opacity,transform] duration-300 ease-out motion-reduce:transform-none motion-reduce:transition-none",
+        "surface-card mesh-border relative overflow-hidden rounded-[2rem] border-border/75 py-0 text-left transition-[border-color,box-shadow,background-color,transform] duration-300 ease-out motion-reduce:transform-none motion-reduce:transition-none",
         isActive
-          ? "min-h-[34rem] border-border/90 shadow-[var(--shadow-soft)]"
-          : "min-h-[18rem] border-border/75 opacity-60 hover:opacity-78",
+          ? "min-h-[34rem] border-border/90 bg-card/90 shadow-[var(--shadow-soft)] dark:border-white/12 dark:bg-white/[0.055]"
+          : "min-h-[20.5rem] border-border/85 bg-background/82 shadow-[0_20px_60px_-38px_rgba(15,23,42,0.28)] group-hover:-translate-y-1 group-hover:border-border/95 group-hover:bg-background/88 group-hover:shadow-[var(--shadow-soft)] dark:border-white/12 dark:bg-white/[0.05] dark:shadow-[0_26px_80px_-48px_rgba(0,0,0,0.78)] dark:group-hover:border-white/20 dark:group-hover:bg-white/[0.075]",
         className,
       )}
     >
       <div
         className={cn(
-          "pointer-events-none absolute inset-x-0 top-0 bg-gradient-to-br",
+          "pointer-events-none absolute inset-x-0 top-0 bg-gradient-to-br transition-opacity duration-300",
           toneMap[project.tone],
-          isActive ? "h-56" : "h-40",
+          isActive ? "h-56 opacity-100" : "h-40 opacity-90 group-hover:opacity-100",
         )}
       />
-      <div className="pointer-events-none absolute inset-x-10 top-8 h-24 rounded-full bg-accent/10 blur-3xl" />
+      <div
+        className={cn(
+          "pointer-events-none absolute inset-x-10 top-8 h-24 rounded-full blur-3xl",
+          isActive ? "bg-accent/10" : "bg-accent/12 dark:bg-accent/16",
+        )}
+      />
 
       <CardContent
         className={cn(
           "relative flex h-full flex-col",
-          isActive ? "gap-6 px-6 py-6 sm:px-7 sm:py-7" : "gap-4 px-5 py-5",
+          isActive ? "gap-6 px-6 py-6 sm:px-7 sm:py-7" : "gap-5 px-5 py-5 lg:px-6 lg:py-6",
         )}
       >
-        <div className="flex flex-wrap items-center justify-between gap-3">
+        <div
+          className={cn(
+            "flex gap-3",
+            isActive ? "flex-wrap items-center justify-between" : "flex-col items-start",
+          )}
+        >
           <Badge
             variant="outline"
-            className="rounded-full border-border/80 bg-background/70 px-3 py-1 text-[0.72rem] uppercase tracking-[0.18em] text-muted-foreground"
+            className={cn(
+              "rounded-full px-3 py-1 text-[0.72rem] uppercase tracking-[0.18em]",
+              isActive
+                ? "border-border/80 bg-background/70 text-muted-foreground dark:border-white/10 dark:bg-white/[0.06]"
+                : "border-border/85 bg-background/78 text-foreground/72 dark:border-white/12 dark:bg-white/[0.065] dark:text-foreground/84",
+            )}
           >
             {project.status}
           </Badge>
 
           {project.highlight ? (
-            <div className="inline-flex items-center gap-2 text-xs font-medium text-muted-foreground">
-              <CircleDot className="size-3 text-accent" />
-              {project.highlight}
+            <div
+              className={cn(
+                "inline-flex max-w-full items-center gap-2 text-xs font-medium",
+                isActive
+                  ? "text-muted-foreground"
+                  : "rounded-full border border-accent/18 bg-accent/10 px-3 py-1 text-foreground/74 dark:border-accent/28 dark:bg-accent/14 dark:text-foreground/86",
+              )}
+            >
+              <CircleDot className="size-3 shrink-0 text-accent" />
+              <span className={cn(!isActive && "block max-w-full truncate")}>{project.highlight}</span>
             </div>
           ) : null}
         </div>
 
-        <div className={cn("space-y-3", isActive ? "max-w-2xl" : "max-w-sm")}>
+        <div className={cn("space-y-3", isActive ? "max-w-2xl" : "max-w-none")}>
           <h3
             className={cn(
               "font-semibold tracking-tight text-foreground",
-              isActive ? "text-2xl sm:text-[2rem]" : "text-xl",
+              isActive
+                ? "text-2xl sm:text-[2rem]"
+                : "text-[1.2rem] leading-tight lg:text-[1.32rem]",
+              !isActive && `${previewClampClass} [-webkit-line-clamp:2]`,
             )}
           >
             {project.name}
           </h3>
           <p
             className={cn(
-              "text-muted-foreground",
-              isActive ? "text-sm leading-7 sm:text-[0.98rem]" : "text-sm leading-6",
+              isActive ? "text-sm leading-7 text-muted-foreground sm:text-[0.98rem]" : "text-sm leading-6 text-foreground/74 dark:text-foreground/82",
             )}
           >
-            {isActive ? project.description : project.preview}
+            {isActive ? (
+              project.description
+            ) : (
+              <span className={cn(previewClampClass, "[-webkit-line-clamp:2]")}>
+                {project.preview}
+              </span>
+            )}
           </p>
         </div>
 
         {isActive ? (
           <>
             <div className="grid gap-3 lg:grid-cols-3">
-              <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4">
+              <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4 dark:border-white/10 dark:bg-white/[0.045]">
                 <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                   {spotlight.problemLabel}
                 </p>
                 <p className="mt-2 text-sm leading-7 text-foreground/88">{project.caseStudy.problem}</p>
               </div>
 
-              <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4">
+              <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4 dark:border-white/10 dark:bg-white/[0.045]">
                 <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                   {spotlight.solutionLabel}
                 </p>
                 <p className="mt-2 text-sm leading-7 text-foreground/88">{project.caseStudy.solution}</p>
               </div>
 
-              <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4">
+              <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4 dark:border-white/10 dark:bg-white/[0.045]">
                 <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                   {spotlight.impactLabel}
                 </p>
@@ -145,10 +177,12 @@ export function ProjectSpotlightCard({
             </div>
           </>
         ) : (
-          <div className="mt-auto flex items-center justify-between gap-3 pt-2 text-xs text-muted-foreground">
-            <span className="max-w-[16rem] leading-6">{project.highlight ?? project.preview}</span>
-            <span className="shrink-0 uppercase tracking-[0.18em]">
+          <div className="mt-auto flex items-center justify-between gap-3 border-t border-border/70 pt-4 text-xs dark:border-white/10">
+            <span className="shrink-0 font-semibold uppercase tracking-[0.2em] text-foreground/76 dark:text-foreground/86">
               {spotlight.viewHighlightLabel}
+            </span>
+            <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-border/80 bg-background/76 text-foreground/76 transition-colors duration-300 group-hover:border-accent/30 group-hover:text-foreground dark:border-white/12 dark:bg-white/[0.06] dark:text-foreground/84 dark:group-hover:border-accent/36">
+              <ArrowUpRight className="size-4" />
             </span>
           </div>
         )}

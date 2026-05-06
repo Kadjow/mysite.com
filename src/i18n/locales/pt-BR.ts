@@ -477,9 +477,9 @@ export const ptBR = {
     },
   },
   projectSpotlight: {
-    carouselLabel: "Spotlight Carousel",
+    carouselLabel: "Projeto em destaque",
     carouselDescription:
-      "O projeto central recebe leitura completa; os laterais funcionam como continuidade visual e navegação contextual.",
+      "Um projeto por vez em leitura completa, com previews laterais para navegação contextual.",
     carouselAriaLabel: "Carrossel spotlight de projetos",
     previousProjectAriaLabel: "Ver projeto anterior",
     nextProjectAriaLabel: "Ver próximo projeto",
@@ -487,8 +487,8 @@ export const ptBR = {
     problemLabel: "Problema",
     solutionLabel: "Solução",
     impactLabel: "Impacto",
-    viewHighlightLabel: "Ver destaque",
-    selectProjectAriaLabel: "Destacar projeto {name}",
+    viewHighlightLabel: "Ver projeto",
+    selectProjectAriaLabel: "Selecionar projeto {name}",
   },
   footer: {
     socialLinksAriaLabel: "Links sociais",

@@ -476,9 +476,9 @@ export const enUS = {
     },
   },
   projectSpotlight: {
-    carouselLabel: "Spotlight Carousel",
+    carouselLabel: "Project spotlight",
     carouselDescription:
-      "The central project gets a complete reading, while the side projects work as visual continuity and contextual navigation.",
+      "One featured project at a time, with side previews that keep navigation quick and contextual.",
     carouselAriaLabel: "Project spotlight carousel",
     previousProjectAriaLabel: "View previous project",
     nextProjectAriaLabel: "View next project",
@@ -486,8 +486,8 @@ export const enUS = {
     problemLabel: "Problem",
     solutionLabel: "Solution",
     impactLabel: "Impact",
-    viewHighlightLabel: "View highlight",
-    selectProjectAriaLabel: "Highlight project {name}",
+    viewHighlightLabel: "View project",
+    selectProjectAriaLabel: "Select project {name}",
   },
   footer: {
     socialLinksAriaLabel: "Social links",

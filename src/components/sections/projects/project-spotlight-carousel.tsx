@@ -114,9 +114,9 @@ export function ProjectSpotlightCarousel({
           goNext();
         }
       }}
-      className="surface-card mesh-border relative overflow-hidden rounded-[2.4rem] border-border/75 px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className="surface-card mesh-border relative overflow-hidden rounded-[2.4rem] border-border/75 px-4 py-5 sm:px-6 sm:py-6 lg:px-10 lg:py-8 xl:px-12 xl:py-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
-      <div className="pointer-events-none absolute inset-x-[18%] top-10 h-40 rounded-full bg-[radial-gradient(circle,oklch(0.74_0.111_190_/_0.16),transparent_72%)] blur-3xl dark:bg-[radial-gradient(circle,oklch(0.79_0.122_190_/_0.22),transparent_72%)]" />
+      <div className="pointer-events-none absolute inset-x-[18%] top-10 h-40 rounded-full bg-[radial-gradient(circle,oklch(0.74_0.111_190_/_0.14),transparent_72%)] blur-3xl dark:bg-[radial-gradient(circle,oklch(0.79_0.122_190_/_0.18),transparent_72%)]" />
 
       <div className="relative flex flex-col gap-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
@@ -187,11 +187,11 @@ export function ProjectSpotlightCarousel({
           </AnimatePresence>
         </div>
 
-        <div className="relative hidden overflow-hidden md:block">
+        <div className="relative hidden overflow-x-clip md:block">
           <LayoutGroup>
             <motion.div
               layout
-              className="flex items-center justify-center gap-3 lg:gap-5 xl:gap-7"
+              className="flex items-stretch justify-center gap-4 lg:gap-5 xl:gap-6"
               transition={transition}
             >
               <AnimatePresence initial={false} mode="popLayout">
@@ -209,9 +209,9 @@ export function ProjectSpotlightCarousel({
                           }
                     }
                     animate={{
-                      opacity: slot.variant === "active" ? 1 : 0.92,
-                      scale: slot.variant === "active" ? 1 : 0.92,
-                      y: slot.variant === "active" ? 0 : 28,
+                      opacity: slot.variant === "active" ? 1 : 0.96,
+                      scale: slot.variant === "active" ? 1 : 0.95,
+                      y: slot.variant === "active" ? 0 : 18,
                     }}
                     exit={
                       reduceMotion
@@ -224,10 +224,10 @@ export function ProjectSpotlightCarousel({
                     }
                     transition={transition}
                     className={cn(
-                      "shrink-0",
+                      "w-full shrink-0",
                       slot.variant === "active"
-                        ? "w-[56%] min-w-0 xl:w-[58%]"
-                        : "w-[22%] min-w-0 xl:w-[19%]",
+                        ? "min-w-0 md:max-w-[46rem] md:flex-[1.18_1_0] xl:max-w-[48rem]"
+                        : "md:flex-[0_0_clamp(16rem,22vw,18.75rem)]",
                     )}
                   >
                     <ProjectSpotlightCard
