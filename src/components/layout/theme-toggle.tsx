@@ -31,7 +31,12 @@ export function ThemeToggle({ ariaLabel }: ThemeToggleProps) {
         disabled
         aria-hidden="true"
       >
-        <span className="h-5 w-5" aria-hidden="true" />
+        <span
+          className="flex h-5 w-5 items-center justify-center"
+          aria-hidden="true"
+        >
+          <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/45" />
+        </span>
       </Button>
     );
   }
