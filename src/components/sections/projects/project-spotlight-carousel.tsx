@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useMemo } from "react";
+import { type MouseEvent, useCallback, useMemo } from "react";
 
 import { ProjectSpotlightCard } from "@/components/sections/projects/project-spotlight-card";
 import { Button } from "@/components/ui/button";
@@ -47,6 +47,28 @@ export function ProjectSpotlightCarousel({
   } = useProjectCarousel(projects);
 
   const projectCount = projects.length;
+  const navigateToPreviousProject = useCallback(() => {
+    goPrevious();
+  }, [goPrevious]);
+  const navigateToNextProject = useCallback(() => {
+    goNext();
+  }, [goNext]);
+  const handlePreviousButtonClick = useCallback(
+    (event: MouseEvent<HTMLButtonElement>) => {
+      event.preventDefault();
+      event.stopPropagation();
+      navigateToPreviousProject();
+    },
+    [navigateToPreviousProject],
+  );
+  const handleNextButtonClick = useCallback(
+    (event: MouseEvent<HTMLButtonElement>) => {
+      event.preventDefault();
+      event.stopPropagation();
+      navigateToNextProject();
+    },
+    [navigateToNextProject],
+  );
 
   const desktopSlots = useMemo<CarouselSlot[]>(() => {
     if (!activeProject) {
@@ -63,7 +85,7 @@ export function ProjectSpotlightCarousel({
           project: previousProject,
           variant: "preview",
           position: "previous",
-          onSelect: goPrevious,
+          onSelect: navigateToPreviousProject,
         },
         { project: activeProject, variant: "active", position: "active" },
       ];
@@ -75,7 +97,7 @@ export function ProjectSpotlightCarousel({
             project: previousProject,
             variant: "preview",
             position: "previous",
-            onSelect: goPrevious,
+            onSelect: navigateToPreviousProject,
           }
         : null,
       { project: activeProject, variant: "active", position: "active" },
@@ -84,11 +106,18 @@ export function ProjectSpotlightCarousel({
             project: nextProject,
             variant: "preview",
             position: "next",
-            onSelect: goNext,
+            onSelect: navigateToNextProject,
           }
         : null,
     ].filter((slot): slot is CarouselSlot => slot !== null);
-  }, [activeProject, goNext, goPrevious, nextProject, previousProject, projectCount]);
+  }, [
+    activeProject,
+    navigateToNextProject,
+    navigateToPreviousProject,
+    nextProject,
+    previousProject,
+    projectCount,
+  ]);
 
   if (!activeProject) {
     return null;
@@ -106,12 +135,12 @@ export function ProjectSpotlightCarousel({
       onKeyDown={(event) => {
         if (event.key === "ArrowLeft") {
           event.preventDefault();
-          goPrevious();
+          navigateToPreviousProject();
         }
 
         if (event.key === "ArrowRight") {
           event.preventDefault();
-          goNext();
+          navigateToNextProject();
         }
       }}
       className="surface-card mesh-border relative overflow-hidden rounded-[2.4rem] border-border/75 px-4 py-5 sm:px-6 sm:py-6 lg:px-10 lg:py-8 xl:px-12 xl:py-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -141,15 +170,15 @@ export function ProjectSpotlightCarousel({
               </span>
             </p>
 
-            <div className="flex items-center gap-2">
+            <div className="relative z-10 flex items-center gap-2">
               <Button
                 type="button"
                 variant="outline"
                 size="icon"
                 aria-label={spotlight.previousProjectAriaLabel}
-                onClick={goPrevious}
+                onClick={handlePreviousButtonClick}
                 disabled={projectCount < 2}
-                className="rounded-full"
+                className="size-11 touch-manipulation rounded-full sm:size-9"
               >
                 <ChevronLeft />
               </Button>
@@ -158,9 +187,9 @@ export function ProjectSpotlightCarousel({
                 variant="outline"
                 size="icon"
                 aria-label={spotlight.nextProjectAriaLabel}
-                onClick={goNext}
+                onClick={handleNextButtonClick}
                 disabled={projectCount < 2}
-                className="rounded-full"
+                className="size-11 touch-manipulation rounded-full sm:size-9"
               >
                 <ChevronRight />
               </Button>
@@ -171,7 +200,7 @@ export function ProjectSpotlightCarousel({
         <div className="md:hidden">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
-              key={activeProject.name}
+              key={`${activeIndex}-${activeProject.name}`}
               initial={reduceMotion ? false : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               exit={reduceMotion ? undefined : { opacity: 0, y: -14 }}
