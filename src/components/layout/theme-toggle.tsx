@@ -10,6 +10,9 @@ type ThemeToggleProps = {
   ariaLabel: string;
 };
 
+const toggleSurfaceClassName =
+  "rounded-full border-border/70 bg-background/70 backdrop-blur";
+
 export function ThemeToggle({ ariaLabel }: ThemeToggleProps) {
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -22,13 +25,8 @@ export function ThemeToggle({ ariaLabel }: ThemeToggleProps) {
 
   if (!mounted) {
     return (
-      <Button
-        type="button"
-        variant="outline"
-        size="icon"
-        className="rounded-full border-border/70 bg-background/70 backdrop-blur"
-        aria-label={ariaLabel}
-        disabled
+      <span
+        className={`inline-flex size-8 items-center justify-center rounded-full border border-border/70 bg-background/70 backdrop-blur`}
         aria-hidden="true"
       >
         <span
@@ -37,7 +35,7 @@ export function ThemeToggle({ ariaLabel }: ThemeToggleProps) {
         >
           <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/45" />
         </span>
-      </Button>
+      </span>
     );
   }
 
@@ -45,11 +43,13 @@ export function ThemeToggle({ ariaLabel }: ThemeToggleProps) {
 
   return (
     <Button
+      key="theme-toggle-ready"
       type="button"
       variant="outline"
       size="icon"
-      className="rounded-full border-border/70 bg-background/70 backdrop-blur"
+      className={toggleSurfaceClassName}
       aria-label={ariaLabel}
+      aria-pressed={isDark}
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
       {isDark ? (
