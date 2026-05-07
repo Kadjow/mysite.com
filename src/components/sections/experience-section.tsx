@@ -13,8 +13,8 @@ export function ExperienceSection({ content }: ExperienceSectionProps) {
   const experiences = getExperiences(content);
 
   return (
-    <SectionWrapper id="experiencia">
-      <div className="space-y-10">
+    <SectionWrapper id="experiencia" className="py-14 sm:py-24">
+      <div className="space-y-8 sm:space-y-10">
         <Reveal>
           <SectionHeading
             eyebrow={content.sections.experience.eyebrow}
@@ -23,7 +23,7 @@ export function ExperienceSection({ content }: ExperienceSectionProps) {
           />
         </Reveal>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-2">
           {experiences.map((experience, index) => (
             <Reveal key={experience.company} delay={0.05 * index}>
               <ExperienceCard
