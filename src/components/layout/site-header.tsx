@@ -117,7 +117,7 @@ export function SiteHeader({ content, locale }: SiteHeaderProps) {
                 variant="outline"
                 size="icon-lg"
                 className={cn(
-                  "rounded-full border-border/70 bg-background/70 backdrop-blur lg:hidden",
+                  "size-11 touch-manipulation rounded-full border-border/70 bg-background/70 backdrop-blur sm:size-9 lg:hidden",
                   isMobileMenuOpen && "bg-muted text-foreground",
                 )}
                 aria-label={

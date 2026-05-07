@@ -18,19 +18,23 @@ export function SiteFooter({ content }: SiteFooterProps) {
           </p>
 
           <nav aria-label={content.footer.socialLinksAriaLabel}>
-            <ul className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <ul className="flex flex-wrap items-center gap-x-1 gap-y-2 sm:gap-x-2 sm:gap-y-1">
               {socialLinks.map((link, index) => {
                 const isExternal = link.href.startsWith("http");
 
                 return (
                   <li key={link.label} className="flex items-center gap-x-2">
-                    {index > 0 ? <span aria-hidden="true">·</span> : null}
+                    {index > 0 ? (
+                      <span aria-hidden="true" className="hidden sm:inline">
+                        &middot;
+                      </span>
+                    ) : null}
                     <a
                       href={link.href}
                       {...(isExternal
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}
-                      className="transition-colors hover:text-foreground"
+                      className="inline-flex min-h-11 items-center rounded-full px-3 py-1 touch-manipulation transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:min-h-0 sm:px-0 sm:py-0"
                     >
                       {link.label}
                     </a>
