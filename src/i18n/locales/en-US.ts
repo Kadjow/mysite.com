@@ -313,11 +313,11 @@ export const enUS = {
         preview: "Visual repositioning with narrative, system, and clarity.",
         caseStudy: {
           problem:
-            "The professional presentation needed to emphasize context, product, and real delivery instead of just listing stack and tools.",
+            "The presentation needed to better highlight context, product, and real delivery.",
           solution:
-            "I restructured the narrative, visual hierarchy, and components to connect positioning, UX, and front-end architecture in a cohesive experience.",
+            "I restructured the narrative, visual hierarchy, and components with a design system.",
           impact:
-            "Seniority is communicated more clearly, and the portfolio better connects strategy with execution.",
+            "The portfolio reads more strategically, and the sense of seniority is clearer.",
         },
         tags: ["Next.js", "TypeScript", "Tailwind", "shadcn/ui", "Design System"],
         status: "Positioning",

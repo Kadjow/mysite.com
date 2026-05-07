@@ -314,11 +314,11 @@ export const ptBR = {
         preview: "Reposicionamento visual com narrativa, sistema e clareza.",
         caseStudy: {
           problem:
-            "A apresentação profissional precisava valorizar contexto, produto e entrega real em vez de listar apenas stack e ferramentas.",
+            "A apresentação precisava valorizar contexto, produto e entrega real.",
           solution:
-            "Reestruturei narrativa, hierarquia visual e componentes para conectar posicionamento, UX e arquitetura front-end em uma experiência coesa.",
+            "Reestruturei narrativa, hierarquia visual e componentes com design system.",
           impact:
-            "A percepção de senioridade fica mais clara e a leitura do portfólio comunica melhor a relação entre estratégia e execução.",
+            "A leitura ficou mais estratégica e a percepção de senioridade mais clara.",
         },
         tags: ["Next.js", "TypeScript", "Tailwind", "shadcn/ui", "Design System"],
         status: "Posicionamento",

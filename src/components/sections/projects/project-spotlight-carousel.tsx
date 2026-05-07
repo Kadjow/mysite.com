@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useMemo } from "react";
 
@@ -187,61 +187,94 @@ export function ProjectSpotlightCarousel({
           </AnimatePresence>
         </div>
 
-        <div className="relative hidden overflow-x-clip md:block">
-          <LayoutGroup>
-            <motion.div
-              layout
-              className="flex items-stretch justify-center gap-4 lg:gap-5 xl:gap-6"
-              transition={transition}
-            >
-              <AnimatePresence initial={false} mode="popLayout">
-                {desktopSlots.map((slot) => (
-                  <motion.div
-                    key={slot.project.name}
-                    layout
-                    initial={
-                      reduceMotion
-                        ? false
-                        : {
-                            opacity: 0,
-                            scale: 0.9,
-                            x: slot.position === "next" ? 48 : -48,
-                          }
-                    }
-                    animate={{
-                      opacity: slot.variant === "active" ? 1 : 0.96,
-                      scale: slot.variant === "active" ? 1 : 0.95,
-                      y: slot.variant === "active" ? 0 : 18,
-                    }}
-                    exit={
-                      reduceMotion
-                        ? undefined
-                        : {
-                            opacity: 0,
-                            scale: 0.88,
-                            x: slot.position === "next" ? -42 : 42,
-                          }
-                    }
-                    transition={transition}
-                    className={cn(
-                      "w-full shrink-0",
-                      slot.variant === "active"
-                        ? "min-w-0 md:max-w-[46rem] md:flex-[1.18_1_0] xl:max-w-[48rem]"
-                        : "md:flex-[0_0_clamp(16rem,22vw,18.75rem)]",
-                    )}
-                  >
-                    <ProjectSpotlightCard
-                      project={slot.project}
-                      variant={slot.variant}
-                      projectLabels={projectLabels}
-                      spotlight={spotlight}
-                      onSelect={slot.onSelect}
-                    />
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </motion.div>
-          </LayoutGroup>
+        <div className="relative hidden overflow-x-clip md:block lg:hidden">
+          <motion.div
+            className="flex items-stretch justify-center gap-4 lg:gap-5 xl:gap-6"
+            transition={transition}
+          >
+            <AnimatePresence initial={false} mode="popLayout">
+              {desktopSlots.map((slot) => (
+                <motion.div
+                  key={slot.project.name}
+                  layout
+                  initial={
+                    reduceMotion
+                      ? false
+                      : {
+                          opacity: 0,
+                          scale: 0.9,
+                          x: slot.position === "next" ? 48 : -48,
+                        }
+                  }
+                  animate={{
+                    opacity: slot.variant === "active" ? 1 : 0.96,
+                    scale: slot.variant === "active" ? 1 : 0.95,
+                    y: slot.variant === "active" ? 0 : 18,
+                  }}
+                  exit={
+                    reduceMotion
+                      ? undefined
+                      : {
+                          opacity: 0,
+                          scale: 0.88,
+                          x: slot.position === "next" ? -42 : 42,
+                        }
+                  }
+                  transition={transition}
+                  className={cn(
+                    "w-full shrink-0",
+                    slot.variant === "active"
+                      ? "min-w-0 md:max-w-[46rem] md:flex-[1.18_1_0] xl:max-w-[48rem]"
+                      : "md:flex-[0_0_clamp(16rem,22vw,18.75rem)]",
+                  )}
+                >
+                  <ProjectSpotlightCard
+                    project={slot.project}
+                    variant={slot.variant}
+                    projectLabels={projectLabels}
+                    spotlight={spotlight}
+                    onSelect={slot.onSelect}
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+
+        <div className="relative hidden lg:block">
+          <div className="grid grid-cols-[minmax(0,0.82fr)_minmax(0,1.28fr)_minmax(0,0.82fr)] items-center gap-5 xl:grid-cols-[minmax(0,0.84fr)_minmax(0,1.32fr)_minmax(0,0.84fr)] xl:gap-6">
+            {desktopSlots.map((slot) => (
+              <div
+                key={`${slot.position}-${slot.project.name}`}
+                className={cn(
+                  "min-w-0",
+                  slot.position === "active" ? "lg:translate-y-0" : "lg:translate-y-5",
+                )}
+              >
+                <motion.div
+                  key={`${activeIndex}-${slot.position}`}
+                  initial={reduceMotion ? false : { opacity: 0.82, scale: 0.985 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={
+                    reduceMotion
+                      ? { duration: 0 }
+                      : {
+                          duration: slot.position === "active" ? 0.26 : 0.22,
+                          ease: [0.22, 1, 0.36, 1],
+                        }
+                  }
+                >
+                  <ProjectSpotlightCard
+                    project={slot.project}
+                    variant={slot.variant}
+                    projectLabels={projectLabels}
+                    spotlight={spotlight}
+                    onSelect={slot.onSelect}
+                  />
+                </motion.div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

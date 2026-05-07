@@ -37,6 +37,21 @@ export function ProjectSpotlightCard({
   const isActive = variant === "active";
   const previewClampClass =
     "overflow-hidden [display:-webkit-box] [-webkit-box-orient:vertical]";
+  const activeClampClass = cn(previewClampClass, "text-balance");
+  const caseStudyItems = [
+    {
+      label: spotlight.problemLabel,
+      value: project.caseStudy.problem,
+    },
+    {
+      label: spotlight.solutionLabel,
+      value: project.caseStudy.solution,
+    },
+    {
+      label: spotlight.impactLabel,
+      value: project.caseStudy.impact,
+    },
+  ];
 
   const contentCard = (
     <Card
@@ -65,7 +80,7 @@ export function ProjectSpotlightCard({
       <CardContent
         className={cn(
           "relative flex h-full flex-col",
-          isActive ? "gap-6 px-6 py-6 sm:px-7 sm:py-7" : "gap-5 px-5 py-5 lg:px-6 lg:py-6",
+          isActive ? "gap-5 px-6 py-6 sm:px-7 sm:py-7" : "gap-5 px-5 py-5 lg:px-6 lg:py-6",
         )}
       >
         <div
@@ -106,7 +121,7 @@ export function ProjectSpotlightCard({
             className={cn(
               "font-semibold tracking-tight text-foreground",
               isActive
-                ? "text-2xl sm:text-[2rem]"
+                ? `text-2xl sm:text-[2rem] ${activeClampClass} [-webkit-line-clamp:2]`
                 : "text-[1.2rem] leading-tight lg:text-[1.32rem]",
               !isActive && `${previewClampClass} [-webkit-line-clamp:2]`,
             )}
@@ -115,7 +130,9 @@ export function ProjectSpotlightCard({
           </h3>
           <p
             className={cn(
-              isActive ? "text-sm leading-7 text-muted-foreground sm:text-[0.98rem]" : "text-sm leading-6 text-foreground/74 dark:text-foreground/82",
+              isActive
+                ? `text-sm leading-6 text-muted-foreground sm:text-[0.98rem] ${activeClampClass} [-webkit-line-clamp:3]`
+                : "text-sm leading-6 text-foreground/74 dark:text-foreground/82",
             )}
           >
             {isActive ? (
@@ -130,27 +147,26 @@ export function ProjectSpotlightCard({
 
         {isActive ? (
           <>
-            <div className="grid gap-3 lg:grid-cols-3">
-              <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4 dark:border-white/10 dark:bg-white/[0.045]">
-                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  {spotlight.problemLabel}
-                </p>
-                <p className="mt-2 text-sm leading-7 text-foreground/88">{project.caseStudy.problem}</p>
-              </div>
-
-              <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4 dark:border-white/10 dark:bg-white/[0.045]">
-                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  {spotlight.solutionLabel}
-                </p>
-                <p className="mt-2 text-sm leading-7 text-foreground/88">{project.caseStudy.solution}</p>
-              </div>
-
-              <div className="rounded-[1.5rem] border border-border/70 bg-background/72 p-4 dark:border-white/10 dark:bg-white/[0.045]">
-                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  {spotlight.impactLabel}
-                </p>
-                <p className="mt-2 text-sm leading-7 text-foreground/88">{project.caseStudy.impact}</p>
-              </div>
+            <div className="grid gap-2.5">
+              {caseStudyItems.map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-[1.35rem] border border-border/70 bg-background/70 px-4 py-3.5 dark:border-white/10 dark:bg-white/[0.045]"
+                >
+                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+                    {item.label}
+                  </p>
+                  <p
+                    className={cn(
+                      "mt-2 text-sm leading-6 text-foreground/88",
+                      previewClampClass,
+                      "[-webkit-line-clamp:3]",
+                    )}
+                  >
+                    {item.value}
+                  </p>
+                </div>
+              ))}
             </div>
 
             <TagList items={project.tags.slice(0, 6)} />
