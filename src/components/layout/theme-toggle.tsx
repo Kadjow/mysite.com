@@ -5,15 +5,17 @@ import { MoonStar, SunMedium } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 type ThemeToggleProps = {
   ariaLabel: string;
+  className?: string;
 };
 
 const toggleSurfaceClassName =
   "rounded-full border-border/70 bg-background/70 backdrop-blur";
 
-export function ThemeToggle({ ariaLabel }: ThemeToggleProps) {
+export function ThemeToggle({ ariaLabel, className }: ThemeToggleProps) {
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -26,7 +28,10 @@ export function ThemeToggle({ ariaLabel }: ThemeToggleProps) {
   if (!mounted) {
     return (
       <span
-        className={`inline-flex size-8 items-center justify-center rounded-full border border-border/70 bg-background/70 backdrop-blur`}
+        className={cn(
+          "inline-flex size-8 items-center justify-center rounded-full border border-border/70 bg-background/70 backdrop-blur",
+          className,
+        )}
         aria-hidden="true"
       >
         <span
@@ -47,7 +52,7 @@ export function ThemeToggle({ ariaLabel }: ThemeToggleProps) {
       type="button"
       variant="outline"
       size="icon"
-      className={toggleSurfaceClassName}
+      className={cn(toggleSurfaceClassName, className)}
       aria-label={ariaLabel}
       aria-pressed={isDark}
       onClick={() => setTheme(isDark ? "light" : "dark")}
