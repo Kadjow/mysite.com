@@ -38,7 +38,7 @@ function LanguageOptionButton({
       aria-label={locale}
       disabled={pending}
       className={cn(
-        "rounded-full px-2.5 py-1 text-[0.68rem] font-semibold tracking-[0.18em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        "touch-manipulation rounded-full px-2.5 py-1 text-[0.68rem] font-semibold tracking-[0.18em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         isActive
           ? "bg-foreground text-background"
           : "text-muted-foreground hover:text-foreground",

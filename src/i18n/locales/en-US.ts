@@ -6,7 +6,7 @@ export const enUS = {
       mobileEngineering: {
         title: "Mobile Engineering",
         description:
-          "Building apps with a consistent user experience, real integrations, and full-cycle ownership through release.",
+          "Mobile apps shaped as real products: clear usage, reliable integrations, and care through release and iteration.",
         items: [
           "Flutter",
           "Dart",
@@ -19,13 +19,13 @@ export const enUS = {
       frontEndSaas: {
         title: "Front-end & SaaS",
         description:
-          "Product interfaces, onboarding, navigation, dynamic themes, and white-label systems built on a scalable foundation.",
+          "SaaS interfaces focused on flows, visual consistency, brand adaptation, and foundations that can scale.",
         items: ["Angular", "TypeScript", "React", "Next.js", "Tailwind", "shadcn/ui"],
       },
       architectureQuality: {
         title: "Architecture & Quality",
         description:
-          "Structure that keeps code clear, evolution predictable, and maintenance friction low over time.",
+          "Structure that makes change more predictable, lowers maintenance friction, and protects quality over time.",
         items: [
           "Clean Architecture",
           "MVVM",
@@ -38,7 +38,7 @@ export const enUS = {
       productBusiness: {
         title: "Product & Business",
         description:
-          "Problem framing, context reading, and conversion awareness to build stronger solutions before, during, and after delivery.",
+          "Context, user, and conversion awareness that keeps technical decisions connected to the product goal.",
         items: [
           "UX",
           "Metrics",
@@ -80,7 +80,7 @@ export const enUS = {
     },
     actions: {
       contact: "Contact me",
-      viewProjects: "View projects",
+      viewProjects: "View case studies",
       downloadResume: "Download resume",
     },
     accessibility: {
@@ -90,9 +90,9 @@ export const enUS = {
   },
   hero: {
     badge: "Mobile, front-end, architecture, and product",
-    title: "I build digital products with code, architecture, and business awareness.",
+    title: "I build digital products with product thinking, architecture, and real-world delivery.",
     subtitle:
-      "I am a mobile and front-end developer with experience in published apps, white-label solutions, SaaS, automations, UI/UX, and real production integrations.",
+      "I work across mobile, front-end, UI/UX, architecture, and integrations to turn business context into products that are clearer, more consistent, and built to evolve.",
     profilePhotoAlt: "Professional photo of Diogo Arthur Gulhak",
     productDeliveryBadge: "Product + delivery",
     productionLabel: "Real production",
@@ -128,7 +128,7 @@ export const enUS = {
   },
   about: {
     quote:
-      "My work goes beyond choosing a technology. I like understanding the problem, structuring the solution, and turning it into a functional, scalable, and well-presented product.",
+      "I don't like building screens just for the sake of it. I like understanding what is behind the problem, organizing the ideas, and turning them into something simple, useful, and well thought out.",
     differentiators: [
       "Product, business, and user awareness to avoid solutions that are technically correct but not truly useful.",
       "Production experience with mobile apps, white-label systems, multi-tenant architecture, authentication, and real integrations.",
@@ -161,15 +161,15 @@ export const enUS = {
         role: "Software Engineer Mobile Flutter",
         category: "Mobile / Production",
         summary:
-          "Worked on a production mobile product covering publishing, architecture, integrations, and visual consistency.",
+          "Worked on published mobile products, connecting architecture, integrations, release workflows, and ongoing evolution in real-world apps.",
         highlights: [
-          "Delivered and published 4 apps from scratch through approval in the Play Store and App Store.",
-          "Implemented white-label and multi-tenant support for 3 clients with variations in theme, brand, and operating context.",
-          "Automated CI/CD with CodeMagic and GitHub Actions and structured a modular foundation for app evolution.",
-          "Integrated REST APIs, OAuth/OIDC, JWT, Firebase, FCM, permissions, and WebView with focus on real user flows.",
+          "Owned delivery and publishing for 4 apps, from development through Play Store and App Store approval.",
+          "Built white-label and multi-tenant support for 3 clients, handling changes in brand, theme, and usage context.",
+          "Set up CI/CD with CodeMagic and GitHub Actions and shaped a modular codebase designed for maintenance and continuous evolution.",
+          "Integrated REST APIs, OAuth/OIDC, JWT, Firebase, FCM, permissions, and WebView into flows that had to hold up in production.",
         ],
         whyItMatters:
-          "Shows the ability to take a product from idea to release, structure architecture for growth, and sustain quality under real production conditions.",
+          "Strengthens a product-building approach grounded in delivery ownership, sustainable architecture, and care for what happens after release.",
         tags: ["Flutter", "Dart", "CI/CD", "OAuth", "Firebase", "Modular architecture"],
       },
       slingui: {
@@ -177,15 +177,15 @@ export const enUS = {
         role: "Angular Web Developer",
         category: "SaaS / Front-end",
         summary:
-          "Worked on multi-tenant SaaS with focus on onboarding, authentication, navigation, and scalable visual consistency.",
+          "Worked on a multi-tenant SaaS product, improving critical flows, white-label support, and visual consistency in a live interface.",
         highlights: [
-          "Built onboarding, authentication, and navigation features in a multi-tenant SaaS environment.",
-          "Implemented dynamic white-label support with adaptable colors, logos, and themes per client.",
-          "Structured design tokens with CSS variables and mat-sys and refactored more complex components.",
-          "Fixed UI/UX, state, DOM, and i18n issues to improve predictability and the product experience.",
+          "Improved onboarding, authentication, and navigation flows across a SaaS product serving different client contexts.",
+          "Implemented dynamic white-label support with adaptable colors, logos, and themes without losing experience consistency.",
+          "Structured design tokens with CSS variables and mat-sys to make the interface more scalable and predictable.",
+          "Refined complex components and fixed UI/UX, state, DOM, and i18n issues to support ongoing product maintenance.",
         ],
         whyItMatters:
-          "Demonstrates maturity in systems that require visual organization, client-level flexibility, and continuous maintenance without losing readability.",
+          "Reinforces a scalable product mindset with attention to core flows, visual consistency, and healthy long-term maintenance.",
         tags: ["Angular", "TypeScript", "White label", "Design tokens", "i18n", "SaaS"],
       },
       gocoffee: {
@@ -193,14 +193,14 @@ export const enUS = {
         role: "Barista / Operations",
         category: "Operations / Leadership",
         summary:
-          "Operations and leadership experience in a fast-paced environment with strong focus on customers and execution discipline.",
+          "Operational and leadership experience in a fast-paced environment, centered on service, training, and reliable execution under pressure.",
         highlights: [
-          "Led the team and trained baristas in day-to-day operations.",
-          "Handled inventory control, organization, and quick response under pressure.",
-          "Served customers with attention to experience and consistency in service.",
+          "Led the team and trained baristas on daily operations and service standards.",
+          "Handled inventory, organization, and quick response during peak-pressure moments.",
+          "Maintained service consistency through clear communication, ownership, and steady day-to-day execution.",
         ],
         whyItMatters:
-          "Strengthens leadership, communication, operational discipline, and user-experience awareness beyond the technical bubble.",
+          "Brings product work closer to real operations, helping frame process, service, and end-user expectations more clearly.",
         tags: ["Leadership", "Operations", "Customer service", "Organization"],
       },
       marcondes: {
@@ -208,14 +208,14 @@ export const enUS = {
         role: "Traffic Manager",
         category: "Metrics / Conversion",
         summary:
-          "Worked with traffic, analytics, and conversion, bringing technology closer to funnels, behavior, and business outcomes.",
+          "Worked with paid traffic, metrics, and conversion, with direct exposure to funnels, landing pages, and user behavior.",
         highlights: [
-          "Worked with Google Ads, Meta Ads, and Google Analytics.",
-          "Applied A/B testing and ROI analysis to support performance-driven decisions.",
-          "Contributed to thinking around landing pages, funnels, and user behavior.",
+          "Worked with Google Ads, Meta Ads, and Google Analytics to track acquisition and performance.",
+          "Used A/B testing and ROI analysis to support decisions tied to measurable outcomes.",
+          "Contributed to evaluating landing pages, funnel steps, and user behavior across the journey.",
         ],
         whyItMatters:
-          "Helps build interfaces and products with stronger conversion awareness, message clarity, and metric literacy.",
+          "Strengthens product decisions around conversion, message clarity, and data-informed reading of user behavior.",
         tags: ["ROI", "Conversion", "Analytics", "A/B", "Landing pages"],
       },
     },
@@ -233,15 +233,15 @@ export const enUS = {
       poAgentOpenclaw: {
         name: "PO Agent / OpenClaw",
         description:
-          "A Product Owner agent integrated with Discord and Linear to track projects, interpret status, organize progress, and support decisions with AI.",
-        preview: "Coordinates context, progress, and prioritization in a single flow.",
+          "A product agent connected to Discord and Linear to follow context, read progress signals, and support decisions inside a real workflow.",
+        preview: "Product context, progress, and decisions in one flow.",
         caseStudy: {
           problem:
-            "Teams with updates scattered across Discord and Linear lose context, prioritization, and operational clarity throughout the project.",
+            "When project conversations live in Discord and tasks live in Linear, context spreads out and it becomes harder to see what actually moved forward.",
           solution:
-            "I centralized status reading, progress organization, and decision support in an agent that turns loose signals into actionable context.",
+            "I shaped the agent to monitor channels, interpret status, and turn scattered signals into actionable product context.",
           impact:
-            "Project follow-up becomes clearer, more consistent, and more useful for product decisions without relying on constant manual checks.",
+            "The workflow gets clearer around progress and next steps, with fewer manual checks and better focus on what needs a decision.",
         },
         tags: [
           "Node.js",
@@ -253,92 +253,92 @@ export const enUS = {
           "Modular architecture",
         ],
         status: "Personal product",
-        highlight: "Coordination, context, and decision-making",
+        highlight: "Product context in a real workflow",
       },
       sparkSalesSystem: {
         name: "Spark / Sales System",
         description:
-          "A system with Flutter mobile, C# desktop, and Python middleware/API for sales issuance, catalog management, inventory, and dashboards.",
-        preview: "Connected commercial operations across mobile, desktop, and API.",
+          "A multi-platform commercial operations case for sales, catalog, inventory, and operational visibility, connecting Flutter mobile, C# desktop, and a Python API.",
+        preview: "Commercial operations connected across sales, inventory, and channels.",
         caseStudy: {
           problem:
-            "The sales operation needed to browse products, track inventory, and issue sales without friction across different parts of the system.",
+            "The operation needed to sell, browse the catalog, and follow inventory with continuity across counter work, mobile routines, and management visibility.",
           solution:
-            "I structured a multi-platform solution with Flutter, C# desktop, and Python middleware to connect catalog, sales, and metrics.",
+            "I designed a multi-platform architecture connecting the mobile app, desktop system, and API to organize sales, products, inventory, and dashboards.",
           impact:
-            "Daily operations become smoother, with less friction between channels and a clearer view of what is happening across the business.",
+            "The solution gives the business a more coherent view of the commercial routine and reduces friction between channels.",
         },
         tags: ["Flutter", "Python", "API REST", "C#", "Sales", "Inventory", "Dashboard"],
-        status: "Production",
-        highlight: "Operations and multi-platform delivery",
+        status: "Commercial operation",
+        highlight: "Sales, inventory, and visibility",
       },
       pdfOcrPostTranscribe: {
         name: "PDF OCR / post_transcribe",
         description:
-          "An application for extracting and structuring text from PDFs and images, with a React/Vite front end and FastAPI backend.",
-        preview: "OCR applied to a real problem, with public deployment.",
+          "An application that extracts and structures text from PDFs and images, with a review-oriented interface and a backend built to automate manual work.",
+        preview: "Text extracted, structured, and ready for review.",
         caseStudy: {
           problem:
-            "Manual transcription and organization of content from PDFs and images make reuse slower and harder than it should be.",
+            "PDF and image content had to be read and transcribed manually before it could be reviewed, reused, or organized.",
           solution:
-            "I combined a React/Vite interface with a FastAPI backend to extract, structure, and return usable text from hard-to-consume files.",
+            "I built a flow for upload, OCR extraction, text structuring, and web-based review so the manual process becomes faster.",
           impact:
-            "Content becomes faster to reuse, reduces manual steps, and is much more accessible in practice.",
+            "The workflow reduces transcription effort while still leaving room for human validation when the content needs checking.",
         },
         tags: ["React", "FastAPI", "Python", "OCR", "PDFs", "Deploy"],
         status: "Personal product",
-        highlight: "Real problem with public deployment",
+        highlight: "Automation with human review",
       },
       gocoffeeLandingPage: {
         name: "GoCoffee Landing Page",
         description:
-          "A premium, conversion-oriented landing page for the GoCoffee Cascavel unit, focused on brand positioning and WhatsApp as the main channel.",
-        preview: "Brand and conversion organized into a single visual narrative.",
+          "A conversion-focused landing page for GoCoffee Cascavel, connecting visual appeal, local brand positioning, and WhatsApp contact.",
+        preview: "Local brand, visual experience, and direct contact.",
         caseStudy: {
           problem:
-            "The digital presence needed to communicate the brand, commercial offer, and contact path with more clarity and a stronger premium feel.",
+            "The unit needed a stronger digital presence that made the brand, offer, and contact path immediately clear.",
           solution:
-            "I designed a landing page with editorial focus, strong hierarchy, and a direct CTA to WhatsApp as the main conversion channel.",
+            "I shaped a visual experience around brand perception, commercial hierarchy, and WhatsApp as the main conversion path.",
           impact:
-            "The offer becomes clearer, the path to contact gets shorter, and the experience reinforces the brand position more effectively.",
+            "The page makes the next step easier for visitors and gives the business a clearer, more consistent digital presence.",
         },
         tags: ["Angular", "SCSS", "Landing page", "UI/UX", "Conversion"],
         status: "Landing page",
-        highlight: "Visual narrative and conversion",
+        highlight: "Local brand and conversion",
       },
       currentPortfolio: {
-        name: "Current portfolio / new portfolio",
+        name: "Product-oriented portfolio",
         description:
-          "An evolution of the professional portfolio focused on narrative, design system, strategic positioning, and front-end architecture.",
-        preview: "Visual repositioning with narrative, system, and clarity.",
+          "A repositioning of the professional portfolio to communicate product thinking, architecture, UX, and real delivery through bilingual content, a design system, and accessible patterns.",
+        preview: "Professional narrative, visual system, and clear positioning.",
         caseStudy: {
           problem:
-            "The presentation needed to better highlight context, product, and real delivery.",
+            "The portfolio needed to feel less like a project list and more like a clear expression of how Diogo thinks about product, architecture, and execution.",
           solution:
-            "I restructured the narrative, visual hierarchy, and components with a design system.",
+            "I reorganized the narrative, visual hierarchy, i18n, components, and accessibility patterns to keep the experience consistent on desktop and mobile.",
           impact:
-            "The portfolio reads more strategically, and the sense of seniority is clearer.",
+            "The experience communicates maturity, context, and positioning with less need for long explanations.",
         },
         tags: ["Next.js", "TypeScript", "Tailwind", "shadcn/ui", "Design System"],
-        status: "Positioning",
-        highlight: "Narrative and identity",
+        status: "Professional positioning",
+        highlight: "Narrative, product, and maturity",
       },
       seuClimaHoje: {
         name: "Seu Clima Hoje",
         description:
-          "A Flutter app for viewing the current weather quickly and clearly, reinforcing API integration and interface clarity.",
-        preview: "Mobile weather lookup focused on quick reading.",
+          "A Flutter app for checking current weather quickly, with external API integration and a direct mobile interface.",
+        preview: "Current weather presented with speed and clarity.",
         caseStudy: {
           problem:
-            "It was necessary to consume external weather data in a direct mobile interface, without clutter and with immediate readability.",
+            "Weather lookup needed to be simple on mobile, with external data presented without visual noise.",
           solution:
-            "I built a lean Flutter experience to present current weather in a simple, clear way integrated with an external API.",
+            "I built a lean Flutter experience connected to an API, prioritizing information hierarchy and quick response.",
           impact:
-            "The app delivers fast, readable lookup while reinforcing API integration and well-structured mobile experience design.",
+            "The app provides an objective lookup while reinforcing care with integration, interface state, and mobile readability.",
         },
         tags: ["Flutter", "API", "Mobile UX", "Applied study"],
         status: "Complementary project",
-        highlight: "Public GitHub repository",
+        highlight: "Direct mobile lookup",
       },
     },
   },
@@ -351,29 +351,29 @@ export const enUS = {
         title: "Understand the problem",
         kicker: "Context",
         description:
-          "Before jumping into implementation, I look for clarity around the objective, user, constraints, risk, and business impact.",
-        outcome: "The result is less rework and stronger direction.",
+          "Before writing code, I work to understand the goal, user, constraints, risk, and what the business needs to solve.",
+        outcome: "The work starts with clearer direction and less rework.",
       },
       structureSolution: {
         title: "Structure the solution",
         kicker: "Architecture",
         description:
-          "I define flows, responsibilities, states, visual patterns, and integration points so the solution starts organized.",
-        outcome: "That helps the product grow without turning into improvisation.",
+          "I organize flows, responsibilities, states, visual patterns, and integrations to reduce noise during execution.",
+        outcome: "The team gets better alignment and a foundation that is easier to evolve.",
       },
       buildWithQuality: {
         title: "Build with quality",
         kicker: "Execution",
         description:
-          "I implement with care for code, visual consistency, componentization, accessibility, and technical predictability.",
-        outcome: "Delivery feels more mature from the first version.",
+          "I build with care for code, interface behavior, accessibility, states, and maintenance while keeping delivery moving.",
+        outcome: "The result is more consistent and ready for real use.",
       },
       validateTestEvolve: {
         title: "Validate, test, and evolve",
         kicker: "Iteration",
         description:
-          "I adjust behavior, test flows, follow feedback, and use real signals to improve what matters most.",
-        outcome: "A good product does not stop at deployment.",
+          "I validate flows, refine behavior, and use feedback to evolve the product safely after release.",
+        outcome: "The next changes have clearer purpose and lower risk.",
       },
     },
   },
@@ -381,25 +381,25 @@ export const enUS = {
     labels: {
       humanNarrative: "Human narrative",
       softSkillsHighlight: "Soft skills in focus",
-      strategicDifferential: "Strategic differentiator",
+      strategicDifferential: "Professional differentiator",
     },
     items: {
       devprDevParana: {
         organization: "DevPR / DevParaná",
         role: "Community, networking, and meetup organization",
-        category: "Community leadership",
+        category: "Technical community",
         summary:
-          "Participation in technical meetups that connect professionals, expand perspectives, and strengthen the local tech scene.",
+          "Work with DevPR through technical meetups that connect professionals, create networking opportunities, and support practical exchange in the local tech scene.",
         narrative:
-          "This experience reflects community presence, people connection, and the ability to turn networking into a useful and consistent exchange environment.",
+          "In community work, I practice communication, organization, and context reading by connecting people, supporting events, and keeping technical conversations useful for people building careers and products.",
         highlights: [
-          "Organized technical meetups and actively supported community outreach.",
-          "Connected professionals with different backgrounds, encouraging meaningful networking.",
-          "Helped strengthen a space for exchange that increases visibility, collaboration, and professional maturity.",
+          "Organizing and supporting technical meetups with care for relevant people, topics, and conversations.",
+          "Networking with professionals from different backgrounds, encouraging technical exchange and collaboration.",
+          "Active participation in a community that requires consistency, clear communication, and responsibility toward the group.",
         ],
         strategicValue:
-          "Shows that Diogo contributes beyond individual delivery. He also adds value to the ecosystem, relationships, and circulation of knowledge.",
-        softSkills: ["Communication", "Articulation", "Community presence", "Networking"],
+          "It brings a more collaborative way of working, with attention to context, alignment, and people, beyond individual delivery.",
+        softSkills: ["Communication", "Organization", "Networking", "Collaboration"],
         tags: ["Community", "Events", "Networking", "Organization"],
       },
       grupoEscoteiroAldeiaVerde: {
@@ -407,17 +407,17 @@ export const enUS = {
         role: "Scouting, mentorship, and human development",
         category: "Discipline and leadership",
         summary:
-          "Ongoing experience since 2016 with practical development in responsibility, discipline, mentorship, and guiding people.",
+          "Ongoing experience since 2016 in environments that call for responsibility, discipline, communication, and group decision-making.",
         narrative:
-          "Scouting adds a rare layer to the portfolio: relational maturity, consistency, and leadership built in real contexts, not just in discourse.",
+          "In scouting, leadership happens through practice: guiding people, taking responsibility, making calm decisions, and keeping the group organized when the context changes.",
         highlights: [
           "Scouting journey since 2016, including the Escoteiro da Pátria title.",
-          "Experience in mentorship, organization, decision-making, and collaboration in groups.",
-          "Human development grounded in responsibility, autonomy, and trust-building.",
+          "Experience with mentorship, planning, decision-making, and group collaboration.",
+          "Development focused on autonomy, trust, responsibility, and care for people.",
         ],
         strategicValue:
-          "Reinforces the ability to lead responsibly, sustain discipline over the long term, and guide people with balance and a sense of duty.",
-        softSkills: ["Mentorship", "Discipline", "Responsibility", "Teamwork"],
+          "It reinforces a steady way of leading, communicating clearly, and taking responsibility for both the group and the work in front of it.",
+        softSkills: ["Mentorship", "Discipline", "Responsibility", "Decision-making"],
         tags: ["Scouting", "Mentorship", "Discipline", "Responsibility"],
       },
     },
@@ -433,46 +433,45 @@ export const enUS = {
   sections: {
     about: {
       eyebrow: "About",
-      title: "Technology as a means to build useful, coherent products ready to grow.",
+      title: "More than choosing the tech, my work is shaping products that make sense.",
       description:
-        "The positioning is not centered on a specific stack. It starts from product, context, delivery, and the ability to turn problems into usable solutions.",
+        "I connect context, product thinking, and execution to turn real problems into clear, useful solutions that can keep evolving.",
     },
     experience: {
       eyebrow: "Professional experience",
-      title: "A path shaped by product thinking, delivery, and operations in real contexts.",
+      title: "A path built across product, operations, technology, and real delivery.",
       description:
-        "The core experience brings together formal career work across software, product, operations, and conversion in environments that demand execution ownership, business impact, and delivery quality.",
+        "My experience brings together software, operations, and conversion in environments that call for ownership, clear execution, and business awareness.",
     },
     projects: {
       eyebrow: "Projects",
-      title:
-        "Projects presented with editorial focus, clear hierarchy, and a spotlight that highlights context, solution, and impact.",
+      title: "Case studies that show how I turn context into product.",
       description:
-        "Instead of a generic grid, the section now highlights one project at a time and uses side previews to suggest continuity without competing for primary attention.",
+        "Each project highlights the problem, the decisions behind the solution, and the impact it was built to create.",
     },
     capabilities: {
       eyebrow: "Capabilities",
-      title: "The stack matters, but the value is in how each area supports the product.",
+      title: "Capabilities that connect technology, product, and execution.",
       description:
-        "Instead of listing disconnected technologies, the V1 organizes capabilities by work context: mobile engineering, front-end and SaaS, architecture and quality, plus the product and business layer.",
+        "The stack is part of the toolkit for shaping interfaces, architecture, and decisions that support products in real use.",
     },
     workMethod: {
       eyebrow: "Method",
-      title: "A way of working that balances context, execution, and continuous evolution.",
+      title: "A simple process for turning context into delivery.",
       description:
-        "The process is simple on the surface but disciplined underneath: understand well, structure carefully, build with quality, and validate what needs to change.",
+        "I start with context, organize the solution, and execute with predictability to align decisions, reduce risk, and keep maintenance manageable.",
     },
     beyondCode: {
       eyebrow: "Beyond code",
-      title: "Leadership, community, and human development as a strategic differentiator.",
+      title: "Experiences outside technical delivery that strengthen leadership, communication, and responsibility.",
       description:
-        "These experiences are not extras. They reinforce professional maturity, the ability to guide people, community presence, and execution discipline, expanding the value of technical work.",
+        "Community work and scouting are part of how I work professionally: they help me handle people, organize context, make decisions, and follow through with maturity.",
     },
     finalCta: {
       eyebrow: "Contact",
-      title: "Want to build something well crafted?",
+      title: "If the challenge involves product, operations, and delivery, it's worth a conversation.",
       description:
-        "If you are looking for someone to build, evolve, or organize a digital product with technical quality and business awareness, let's talk.",
+        "I'm open to talking with companies, teams, and people looking to build or evolve digital products with technical clarity, business awareness, and care for user experience.",
     },
   },
   projectSpotlight: {

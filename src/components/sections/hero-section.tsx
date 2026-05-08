@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowRight, Download, MessageCircleMore } from "lucide-react";
 
-import profileImage from "@/assets/images/profile/diogo-gulhak.png";
+import profileImage from "@/assets/images/profile/diogo-gulhak.webp";
 import { MetricCard } from "@/components/cards/metric-card";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { ExternalLinkButton } from "@/components/shared/external-link-button";

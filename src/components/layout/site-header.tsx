@@ -76,7 +76,10 @@ export function SiteHeader({ content, locale }: SiteHeaderProps) {
           ) : null}
 
           <div className="surface-card relative z-20 flex items-center justify-between rounded-full px-4 py-3 sm:px-5">
-            <a href="#inicio" className="flex items-center gap-3">
+            <a
+              href="#inicio"
+              className="-mx-1.5 flex min-h-11 touch-manipulation items-center gap-3 rounded-full px-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:mx-0 lg:min-h-0 lg:px-0"
+            >
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground text-sm font-semibold text-background">
                 DAG
               </span>
@@ -105,12 +108,12 @@ export function SiteHeader({ content, locale }: SiteHeaderProps) {
             <div className="flex items-center gap-2 sm:gap-3">
               <LanguageSwitcher
                 currentLocale={locale}
-                className="min-h-11 sm:min-h-0"
-                buttonClassName="min-h-9 px-3 text-[0.72rem] sm:min-h-0 sm:px-2.5 sm:text-[0.68rem]"
+                className="min-h-12 sm:min-h-0"
+                buttonClassName="min-h-11 min-w-11 px-3 text-[0.72rem] sm:min-h-0 sm:min-w-0 sm:px-2.5 sm:text-[0.68rem]"
               />
               <ThemeToggle
                 ariaLabel={content.common.accessibility.toggleTheme}
-                className="size-10 sm:size-8"
+                className="size-11 sm:size-8"
               />
               <Button
                 type="button"
