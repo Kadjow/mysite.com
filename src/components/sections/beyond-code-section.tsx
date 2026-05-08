@@ -13,8 +13,8 @@ export function BeyondCodeSection({ content }: BeyondCodeSectionProps) {
   const beyondCodeExperiences = getBeyondCodeExperiences(content);
 
   return (
-    <SectionWrapper id="alem-do-codigo">
-      <div className="space-y-10">
+    <SectionWrapper id="alem-do-codigo" className="py-14 sm:py-24">
+      <div className="space-y-8 sm:space-y-10">
         <div className="max-w-4xl">
           <Reveal>
             <SectionHeading
@@ -25,7 +25,7 @@ export function BeyondCodeSection({ content }: BeyondCodeSectionProps) {
           </Reveal>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-2">
           {beyondCodeExperiences.map((experience, index) => (
             <Reveal key={experience.organization} delay={0.05 * index}>
               <BeyondCodeCard
