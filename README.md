@@ -1,36 +1,76 @@
-# Portfólio V1 — Diogo Arthur Gulhak
+# Portfólio — Diogo Arthur Gulhak
 
-Portfólio profissional construído em Next.js com foco em posicionamento orientado a produto.
+Este é meu portfólio profissional, desenvolvido para apresentar minha trajetória, meus projetos e minha forma de pensar produto.
 
-Em vez de vender Diogo como "dev de uma stack específica", esta V1 apresenta uma narrativa centrada em:
+A ideia deste projeto não é me limitar a uma stack específica, mas mostrar como eu conecto tecnologia, contexto, experiência do usuário e entrega para construir soluções mais claras, úteis e bem estruturadas.
 
-- produto
-- arquitetura
-- mobile e front-end
-- UI/UX
-- entrega em produção
-- visão de negócio
+O portfólio foi desenvolvido com Next.js, TypeScript, Tailwind CSS e shadcn/ui, com suporte a tema claro/escuro, responsividade e conteúdo em português e inglês.
 
-## Stack
+## O que este portfólio apresenta
 
-- Next.js 16
+- Minha experiência profissional.
+- Projetos organizados como cases.
+- Minha forma de trabalhar.
+- Capacidades técnicas e de produto.
+- Experiências além do código.
+- Contato e currículo para download.
+
+## Stack principal
+
+- Next.js
 - TypeScript
-- Tailwind CSS v4
+- Tailwind CSS
 - shadcn/ui
 - Lucide React
 - next-themes
 - Framer Motion
 
-## Comandos
+## Funcionalidades
+
+- Tema claro e escuro.
+- Conteúdo em PT-BR e EN-US.
+- Seletor de idioma com persistência.
+- Layout responsivo para desktop e mobile.
+- Seção de projetos em formato de carrossel.
+- Download direto do currículo.
+- Componentes organizados e reutilizáveis.
+- Conteúdo centralizado em arquivos de i18n.
+
+## Como rodar o projeto
+
+Instale as dependências:
 
 ```bash
-npm install
-npm run dev
-npm run lint
-npm run build
+pnpm install
 ```
 
-## Arquitetura de pastas
+Rode o projeto em ambiente de desenvolvimento:
+
+```bash
+pnpm run dev
+```
+
+Acesse no navegador:
+
+```bash
+http://localhost:3000
+```
+
+## Validação
+
+Para verificar lint:
+
+```bash
+pnpm run lint
+```
+
+Para gerar o build de produção:
+
+```bash
+pnpm run build
+```
+
+## Estrutura principal
 
 ```text
 src/
@@ -38,74 +78,91 @@ src/
     layout.tsx
     page.tsx
     globals.css
+
   assets/
     images/
       profile/
       projects/
+
   components/
-    ui/
     layout/
-      site-header.tsx
-      site-footer.tsx
-      section-wrapper.tsx
-      theme-toggle.tsx
     sections/
-      hero-section.tsx
-      about-section.tsx
-      experience-section.tsx
-      projects-section.tsx
-      capabilities-section.tsx
-      work-method-section.tsx
-      beyond-code-section.tsx
-      final-cta-section.tsx
     cards/
-      metric-card.tsx
-      project-card.tsx
-      experience-card.tsx
-      capability-card.tsx
-      method-card.tsx
     shared/
-      section-heading.tsx
-      external-link-button.tsx
-      tag-list.tsx
-      reveal.tsx
-      theme-provider.tsx
+    ui/
+
   data/
-    profile.ts
-    metrics.ts
-    experiences.ts
-    projects.ts
-    capabilities.ts
-    work-method.ts
-    social-links.ts
+
+  i18n/
+    config.ts
+    dictionaries.ts
+    get-content.ts
+    index.ts
+    locales/
+      pt-BR.ts
+      en-US.ts
+    types.ts
+
   lib/
-    utils.ts
+
   styles/
     tokens.css
+
 public/
   diogo-arthur-gulhak-curriculo.pdf
 ```
 
-## Decisões de Design System
+## Organização do conteúdo
 
-- Tokens semânticos em `src/styles/tokens.css` para `background`, `foreground`, `card`, `muted`, `primary`, `accent`, `border`, `ring`, `success` e `warning`.
-- Tema claro/escuro com `next-themes` e estilo visual premium baseado em neutros + acento ciano/verde suave.
-- Componentes organizados em camadas pequenas e reutilizáveis para evitar dados hardcoded dentro das seções.
-- Layout editorial com bastante respiro, cards arredondados, blur leve, gradientes sutis e bordas suaves.
-- `shadcn/ui` como base dos botões, cards, badges, menu de tema e sheet mobile.
+Os textos principais do portfólio ficam centralizados nos arquivos de i18n:
 
-## O que foi implementado
+```text
+src/i18n/locales/pt-BR.ts
+src/i18n/locales/en-US.ts
+```
 
-- Header responsivo com CTA e toggle de tema.
-- Hero forte com métricas, CTAs e foto local.
-- Seções de sobre, experiência, projetos, capacidades, método, fora do código e CTA final.
-- Projetos e experiências renderizados a partir de `src/data`.
-- Currículo em PDF estático para download direto.
+Os arquivos em `src/data` mantêm configurações estruturais, como links, ícones, ordem dos itens e informações que não dependem diretamente do idioma.
 
-## Próximos passos para V2
+Essa divisão ajuda a manter o conteúdo mais fácil de revisar e prepara o projeto para evoluções futuras.
 
-- Adicionar screenshots reais por projeto em `src/assets/images/projects`.
-- Publicar a V1 e trocar o link do projeto "novo portfólio" para a versão online.
-- Incluir estudos de caso mais profundos para Atlas, Slingui, Spark e PO Agent.
-- Adicionar analytics, SEO expandido e Open Graph customizado.
-- Refinar microinterações e validação visual no browser após deploy.
+## Decisões do projeto
+
+Algumas decisões que guiaram esta V1:
+
+- Usar uma identidade visual limpa, com suporte a tema claro e escuro.
+- Apresentar projetos como cases, não apenas como links de repositório.
+- Evitar uma comunicação focada apenas em stack.
+- Destacar produto, contexto, arquitetura, UI/UX e entrega real.
+- Manter componentes pequenos, reutilizáveis e organizados.
+- Centralizar textos em i18n para facilitar manutenção.
+- Construir uma experiência responsiva para desktop e mobile.
+
+## Projetos em destaque
+
+A seção de projetos foi pensada para mostrar mais do que tecnologias utilizadas. Cada projeto apresenta uma leitura de:
+
+- problema;
+- solução;
+- impacto;
+- contexto técnico;
+- decisão de produto.
+
+A ideia é mostrar como cada entrega conecta raciocínio, execução e aprendizado prático.
+
+## Próximos passos
+
+Algumas melhorias que podem entrar em versões futuras:
+
+- Adicionar screenshots reais dos projetos.
+- Aprofundar estudos de caso individuais.
+- Melhorar SEO e Open Graph.
+- Adicionar analytics.
+- Revisar performance após deploy.
+- Evoluir animações e microinterações.
+- Criar páginas dedicadas para projetos selecionados.
+
+## Contato
+
+- LinkedIn: [Diogo Arthur Gulhak](https://www.linkedin.com/in/dagulhak/)
+- GitHub: [Kadjow](https://github.com/Kadjow)
+- Email: [dgulhak@gmail.com](mailto:dgulhak@gmail.com)
