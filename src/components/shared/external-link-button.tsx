@@ -32,7 +32,10 @@ export function ExternalLinkButton({
       asChild
       size={size}
       variant={variant}
-      className={cn("rounded-full px-5", className)}
+      className={cn(
+        "min-h-11 min-w-11 touch-manipulation rounded-full px-4 sm:min-h-0 sm:min-w-0 sm:px-5",
+        className,
+      )}
     >
       <a
         href={href}

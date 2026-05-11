@@ -2,24 +2,34 @@ import { ExperienceCard } from "@/components/cards/experience-card";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { experiences } from "@/data/experiences";
+import { getExperiences } from "@/data/experiences";
+import type { SiteContent } from "@/i18n";
 
-export function ExperienceSection() {
+type ExperienceSectionProps = {
+  content: SiteContent;
+};
+
+export function ExperienceSection({ content }: ExperienceSectionProps) {
+  const experiences = getExperiences(content);
+
   return (
-    <SectionWrapper id="experiencia">
-      <div className="space-y-10">
+    <SectionWrapper id="experiencia" className="py-14 sm:py-24">
+      <div className="space-y-8 sm:space-y-10">
         <Reveal>
           <SectionHeading
-            eyebrow="Experiência profissional"
-            title="Uma trajetória orientada a produto, entrega e operação em contexto real."
-            description="A experiência principal concentra a carreira formal: software, produto, operação e conversão aplicados a ambientes com responsabilidade de execução, impacto de negócio e qualidade de entrega."
+            eyebrow={content.sections.experience.eyebrow}
+            title={content.sections.experience.title}
+            description={content.sections.experience.description}
           />
         </Reveal>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-2">
           {experiences.map((experience, index) => (
             <Reveal key={experience.company} delay={0.05 * index}>
-              <ExperienceCard experience={experience} />
+              <ExperienceCard
+                experience={experience}
+                productStrengthLabel={content.experience.labels.productStrengthLabel}
+              />
             </Reveal>
           ))}
         </div>
