@@ -154,7 +154,7 @@ export const ptBR = {
   },
   experience: {
     labels: {
-      productStrengthLabel: "Como isso fortalece produto",
+      productStrengthLabel: "Valor na prática",
     },
     items: {
       atlas: {
@@ -162,15 +162,15 @@ export const ptBR = {
         role: "Software Engineer Mobile Flutter",
         category: "Mobile / Produção",
         summary:
-          "Atuação em produto mobile publicado, conectando arquitetura, integrações, release e evolução contínua em aplicações reais.",
+          "Atuei em +4 produtos mobile trabalhando desde sua criação até o deploy para produção, conectando arquitetura, integrações, release e evolução contínua em aplicações reais.",
         highlights: [
-          "Conduziu a entrega e publicação de 4 apps, do desenvolvimento à aprovação em Play Store e App Store.",
-          "Estruturou white label e multi-tenant para 3 clientes, acomodando variações de marca, tema e contexto de uso.",
-          "Organizou CI/CD com CodeMagic e GitHub Actions e uma base modular pensada para manutenção e evolução contínua.",
-          "Integrou APIs REST, OAuth/OIDC, JWT, Firebase, FCM, permissões e WebView em fluxos que precisavam funcionar em produção.",
+          "Entreguei e publiquei 4 aplicativos (do zero até aprovação na Play Store / App Store), garantindo releases estáveis em produção.",
+          "Implementei fluxo white label / multi-tenant para 3 clientes, mantendo identidade visual e configurações específicas por marca com uma única base de código.",
+          " Automatizei CI/CD com CodeMagic e GitHub Actions, acelerando o ciclo de build/test/distribuição (interno + lojas).",
+          "Integrou APIs REST, OAuth/OIDC, JWT, Firebase, FCM, permissões e WebView em fluxos que precisam funcionar em produção.",
         ],
         whyItMatters:
-          "Fortalece a capacidade de construir produto com responsabilidade de entrega, arquitetura sustentável e atenção ao que acontece depois do release.",
+          "Mostra experiência em levar produto para produção, cuidar da base técnica e manter evolução depois do release.",
         tags: ["Flutter", "Dart", "CI/CD", "OAuth", "Firebase", "Arquitetura modular"],
       },
       slingui: {
@@ -181,12 +181,12 @@ export const ptBR = {
           "Atuação em SaaS multi-tenant, evoluindo fluxos críticos de produto, white label e consistência visual em interface mantida em produção.",
         highlights: [
           "Evoluiu onboarding, autenticação e navegação em um produto SaaS com diferentes contextos de cliente.",
-          "Implementou white label dinâmico com adaptação de cores, logos e temas sem perder coerência de experiência.",
-          "Estruturou design tokens com CSS variables e mat-sys para dar escala e previsibilidade à interface.",
-          "Refinou componentes e corrigiu problemas de UI/UX, estado, DOM e i18n para sustentar manutenção contínua.",
+          "Implementei o white label dinâmico com adaptação de cores, logos e temas sem perder coerência de experiência.",
+          "Estruturei design tokens com CSS variables e mat-sys para dar escala e previsibilidade à interface.",
+          "Refatorei componentes e corrigiu problemas de UI/UX, estado, DOM e i18n para sustentar manutenção contínua.",
         ],
         whyItMatters:
-          "Reforça visão de produto escalável, com atenção a fluxos essenciais, consistência visual e manutenção saudável ao longo do tempo.",
+          "Mostra cuidado com produto em escala: fluxos importantes, consistência visual e manutenção contínua.",
         tags: ["Angular", "TypeScript", "White label", "Design tokens", "i18n", "SaaS"],
       },
       gocoffee: {
@@ -196,12 +196,12 @@ export const ptBR = {
         summary:
           "Vivência de operação e liderança em ambiente de ritmo intenso, com foco em atendimento, treinamento e execução sob pressão.",
         highlights: [
-          "Liderou equipe e treinou baristas na rotina operacional e no padrão de atendimento.",
-          "Cuidou de estoque, organização e resposta rápida em momentos de maior pressão.",
+          "Liderei as equipes e treinei baristas na rotina operacional e no padrão de atendimento.",
+          "Cuidei de estoque, organização e resposta rápida em momentos de maior pressão.",
           "Sustentou a experiência de serviço com comunicação clara, responsabilidade e consistência no dia a dia.",
         ],
         whyItMatters:
-          "Aproxima a construção de produto da operação real e fortalece leitura de processo, serviço e expectativa do usuário final.",
+          "Conecta operação, atendimento e liderança com uma leitura mais próxima do usuário real.",
         tags: ["Liderança", "Operação", "Atendimento", "Organização"],
       },
       marcondes: {
@@ -211,12 +211,12 @@ export const ptBR = {
         summary:
           "Atuação em tráfego pago, métricas e conversão, com leitura de funil, landing pages e comportamento do usuário.",
         highlights: [
-          "Trabalhou com Google Ads, Meta Ads e Google Analytics para acompanhar aquisição e performance.",
+          "Trabalhei com Google Ads, Meta Ads e Google Analytics para acompanhar aquisição e performance.",
           "Aplicou testes A/B e leitura de ROI como base para decisões orientadas por resultado.",
-          "Participou da análise de landing pages, etapas de funil e comportamento do usuário ao longo da jornada.",
+          "Participou da análise e criação de landing pages, etapas de funil e comportamento do usuário ao longo da jornada.",
         ],
         whyItMatters:
-          "Fortalece decisões de produto mais conectadas a conversão, clareza de mensagem e leitura de comportamento baseada em dados.",
+          "Ajuda a ligar métricas, conversão e comportamento do usuário a decisões de negócio mais claras.",
         tags: ["ROI", "Conversão", "Analytics", "A/B", "Landing pages"],
       },
     },
@@ -232,114 +232,106 @@ export const ptBR = {
     },
     items: {
       poAgentOpenclaw: {
-        name: "PO Agent / OpenClaw",
+        name: "ClawDex / PO Agent",
         description:
-          "Agente de produto integrado a Discord e Linear para acompanhar contexto, ler sinais de progresso e apoiar decisões em um fluxo real de trabalho.",
-        preview: "Contexto de produto, progresso e decisão no mesmo fluxo.",
+          "ClawDex é um Product Owner digital para acompanhar contexto, organizar backlog e apoiar decisões de produto usando Discord, Linear e OpenClaw.",
+        preview: "Product Owner digital em fluxo real.",
         caseStudy: {
           problem:
-            "Projetos com conversas no Discord e tarefas no Linear tendem a espalhar contexto, dificultando priorização e leitura do que realmente avançou.",
+            "Conversas, decisões e tarefas de projeto se espalham entre canais, backlog e histórico, dificultando priorização, clareza de status e acompanhamento real do progresso.",
           solution:
-            "Modelei o agente para acompanhar canais, interpretar status e transformar sinais dispersos em um resumo acionável para decisões de produto.",
+            "Modelei o ClawDex sobre OpenClaw, conectado ao Discord e ao Linear, para interpretar contexto, consultar backlog, diagnosticar issues e sugerir próximos passos com segurança.",
           impact:
-            "O fluxo ganha mais clareza sobre progresso e próximos passos, reduzindo checagens manuais e ajudando a manter foco no que precisa ser decidido.",
+            "O fluxo reduz ruído operacional, organiza sinais dispersos e apoia decisões de produto sem automatizar mudanças críticas sem preview e confirmação explícita.",
         },
-        tags: [
-          "Node.js",
-          "IA",
-          "Discord",
-          "Linear",
-          "Product Owner",
-          "Automação",
-          "Arquitetura modular",
-        ],
+        tags: ["Node.js", "OpenClaw", "Discord", "Linear", "Product Owner", "IA"],
         status: "Produto pessoal",
-        highlight: "Contexto de produto em fluxo real",
+        highlight: "Product Owner digital em fluxo real",
       },
       sparkSalesSystem: {
-        name: "Spark / Sistema de Vendas",
+        name: "Spark / CRM de Vendas",
         description:
-          "Projeto de operação comercial multi-plataforma para vendas, catálogo, estoque e visão operacional, conectando mobile Flutter, desktop C# e API Python.",
-        preview: "Operação comercial conectada entre vendas, estoque e canais.",
+          "CRM de vendas multi-plataforma que conecta emissão de vendas, controle comercial, análise de dados e middleware.",
+        preview: "Mobile, desktop e API conectados.",
         caseStudy: {
           problem:
-            "A operação precisava vender, consultar catálogo e acompanhar estoque com continuidade entre balcão, rotina móvel e leitura gerencial.",
+            "Uma operação comercial precisa conectar vendas, clientes, produtos e análise de dados sem depender de controles soltos ou processos manuais difíceis de manter.",
           solution:
-            "Desenhei uma arquitetura multi-plataforma conectando app mobile, sistema desktop e API para organizar vendas, produtos, estoque e dashboard.",
+            "Construí a frente mobile em Flutter para emissão de vendas e cadastro de clientes, integrada a um ecossistema com desktop em C# e middleware Python conectado ao Supabase.",
           impact:
-            "A solução dá uma visão mais coesa da rotina comercial e reduz a ruptura entre canais, facilitando acompanhamento e execução no dia a dia.",
+            "O projeto mostra capacidade de conectar interface, operação e dados em uma solução mais clara para uso diário, com responsabilidades bem definidas entre mobile, desktop e backend.",
         },
-        tags: ["Flutter", "Python", "API REST", "C#", "Vendas", "Estoque", "Dashboard"],
+        tags: ["Flutter", "Dart", "C#", "Python", "Supabase", "CRM"],
         status: "Operação comercial",
-        highlight: "Vendas, estoque e visão operacional",
+        highlight: "Mobile, desktop e API conectados",
       },
       pdfOcrPostTranscribe: {
-        name: "PDF OCR / post_transcribe",
+        name: "PDF Transcribe",
         description:
-          "Aplicação para extrair e estruturar texto de PDFs e imagens, com interface de revisão e backend preparado para automatizar um processo manual.",
-        preview: "Texto extraído, estruturado e pronto para revisão.",
+          "Aplicação para transformar PDFs e imagens em conteúdo revisável, copiável e melhor estruturado.",
+        preview: "PDF, OCR e revisão de conteúdo.",
         caseStudy: {
           problem:
-            "Conteúdos em PDFs e imagens exigiam leitura e transcrição manual antes de poderem ser revisados, reaproveitados ou organizados.",
+            "Materiais em PDF e imagens podem ser difíceis de acessar, revisar ou transcrever manualmente, consumindo tempo em tarefas repetitivas e pouco produtivas.",
           solution:
-            "Construí um fluxo com upload, extração OCR, estruturação do texto e retorno em interface web para acelerar revisão e ajustes.",
+            "Construí uma aplicação com upload de PDF, extração de páginas, miniaturas, revisão e transcrição, conectando front-end e backend com fluxo pensado para reduzir trabalho manual.",
           impact:
-            "O processo fica mais rápido e menos dependente de transcrição manual, mantendo espaço para validação humana quando o conteúdo precisa ser conferido.",
+            "A solução transforma um processo pesado em uma experiência mais organizada, permitindo revisar, copiar e estruturar conteúdo com menos esforço.",
         },
-        tags: ["React", "FastAPI", "Python", "OCR", "PDFs", "Deploy"],
-        status: "Produto pessoal",
-        highlight: "Automação com revisão humana",
+        tags: ["React", "FastAPI", "Python", "OCR", "PDF", "Automação"],
+        status: "Automação de processo",
+        highlight: "PDF, OCR e revisão de conteúdo",
       },
       gocoffeeLandingPage: {
-        name: "GoCoffee Landing Page",
+        name: "LP GoCoffee Cascavel",
         description:
-          "Landing page orientada à conversão para a unidade GoCoffee Cascavel, conectando apelo visual, posicionamento de marca e contato pelo WhatsApp.",
-        preview: "Marca local, experiência visual e contato direto.",
+          "Landing page para trabalhar narrativa visual, apresentação de marca e experiência focada em conversão.",
+        preview: "Marca, UI/UX e conversão.",
         caseStudy: {
           problem:
-            "A unidade precisava apresentar a marca com mais força, explicar a oferta com clareza e levar o visitante ao contato sem fricção.",
+            "Uma marca local precisa apresentar produtos, ambiente e proposta de valor com clareza, criando confiança e levando o visitante para uma ação simples.",
           solution:
-            "Organizei uma experiência visual focada em percepção de marca, hierarquia comercial e CTA para WhatsApp como caminho principal de conversão.",
+            "Desenvolvi uma landing page em Angular com foco em UI/UX, narrativa visual, apresentação editorial dos produtos e experiência de navegação mais clara.",
           impact:
-            "A página torna a decisão de contato mais simples e alinhada ao negócio, com uma presença digital mais clara e consistente.",
+            "O projeto mostra cuidado com experiência, marca e decisão do usuário, conectando design, conteúdo e objetivo comercial em uma interface única.",
         },
-        tags: ["Angular", "SCSS", "Landing page", "UI/UX", "Conversão"],
+        tags: ["Angular", "TypeScript", "SCSS", "UI/UX", "Landing page", "Conversão"],
         status: "Landing page",
-        highlight: "Marca local e conversão",
+        highlight: "Marca, UI/UX e conversão",
       },
       currentPortfolio: {
-        name: "Portfólio orientado a produto",
+        name: "Post.IA",
         description:
-          "Reposicionamento do portfólio profissional para comunicar produto, arquitetura, UX e entrega real com narrativa bilíngue, design system e acessibilidade.",
-        preview: "Narrativa profissional, sistema visual e posicionamento claro.",
+          "Produto com IA para transformar briefing em posts mais claros, estratégicos e alinhados ao público certo.",
+        preview: "Briefing, posicionamento e conteúdo.",
         caseStudy: {
           problem:
-            "O portfólio precisava deixar de parecer apenas uma vitrine de projetos e comunicar com clareza como Diogo pensa produto, arquitetura e execução.",
+            "Criar conteúdo estratégico exige transformar briefing, contexto e posicionamento em mensagens claras; sem estrutura, o resultado tende a virar texto genérico.",
           solution:
-            "Reorganizei narrativa, hierarquia visual, i18n, componentes e padrões de acessibilidade para sustentar uma leitura consistente em desktop e mobile.",
+            "Estruturei uma experiência para apoiar a tradução de briefing em conteúdo mais direcionado, usando IA como apoio à clareza, posicionamento e intenção da mensagem.",
           impact:
-            "A experiência passa a transmitir mais maturidade, contexto e clareza de posicionamento sem depender de explicações longas.",
+            "O projeto reforça a conexão entre produto, comunicação e IA aplicada, mostrando tecnologia como ferramenta para orientar mensagem, público e posicionamento.",
         },
-        tags: ["Next.js", "TypeScript", "Tailwind", "shadcn/ui", "Design System"],
-        status: "Posicionamento profissional",
-        highlight: "Narrativa, produto e maturidade",
+        tags: ["Next.js", "TypeScript", "IA", "Produto", "Conteúdo", "Posicionamento"],
+        status: "Produto com IA",
+        highlight: "Briefing, posicionamento e conteúdo",
       },
       seuClimaHoje: {
         name: "Seu Clima Hoje",
         description:
-          "Aplicativo Flutter para consulta do clima atual com leitura rápida, integração com API externa e interface mobile direta.",
-        preview: "Clima atual apresentado com foco em rapidez e clareza.",
+          "Aplicativo Flutter para consultar clima atual de forma simples, rápida e organizada.",
+        preview: "API externa e multi-plataforma.",
         caseStudy: {
           problem:
-            "A consulta de clima precisava ser simples no celular, com dados externos apresentados sem ruído visual.",
+            "Consultar informações básicas de clima pode ser uma experiência confusa quando os dados não são apresentados de forma direta e objetiva.",
           solution:
-            "Construí uma experiência Flutter enxuta, conectada a API, priorizando hierarquia de informação e resposta rápida.",
+            "Desenvolvi um app Flutter para exibir informações de clima com consumo de API externa, estrutura multi-plataforma e base preparada para evoluções futuras.",
           impact:
-            "O app entrega uma consulta objetiva e reforça cuidado com integração, estado da interface e leitura mobile.",
+            "O projeto demonstra prática mobile com Flutter, integração com API externa e organização inicial de uma aplicação pensada para Android, iOS, Web e Desktop.",
         },
-        tags: ["Flutter", "API", "UX mobile", "Estudo aplicado"],
-        status: "Projeto complementar",
-        highlight: "Consulta mobile direta",
+        tags: ["Flutter", "Dart", "API externa", "Mobile", "Multi-plataforma"],
+        status: "App Flutter",
+        highlight: "API externa e multi-plataforma",
       },
     },
   },

@@ -153,7 +153,7 @@ export const enUS = {
   },
   experience: {
     labels: {
-      productStrengthLabel: "How this strengthens the product",
+      productStrengthLabel: "Practical value",
     },
     items: {
       atlas: {
@@ -165,11 +165,11 @@ export const enUS = {
         highlights: [
           "Owned delivery and publishing for 4 apps, from development through Play Store and App Store approval.",
           "Built white-label and multi-tenant support for 3 clients, handling changes in brand, theme, and usage context.",
-          "Set up CI/CD with CodeMagic and GitHub Actions and shaped a modular codebase designed for maintenance and continuous evolution.",
-          "Integrated REST APIs, OAuth/OIDC, JWT, Firebase, FCM, permissions, and WebView into flows that had to hold up in production.",
+          "Automated CI/CD with CodeMagic and GitHub Actions, accelerating the build, test, and distribution cycle for internal releases and app stores.",
+          "Integrated REST APIs, OAuth/OIDC, JWT, Firebase, FCM, permissions, and WebView into flows that need to work reliably in production.",
         ],
         whyItMatters:
-          "Strengthens a product-building approach grounded in delivery ownership, sustainable architecture, and care for what happens after release.",
+          "Shows experience shipping real products, caring for the technical base, and keeping them evolving after release.",
         tags: ["Flutter", "Dart", "CI/CD", "OAuth", "Firebase", "Modular architecture"],
       },
       slingui: {
@@ -182,10 +182,10 @@ export const enUS = {
           "Improved onboarding, authentication, and navigation flows across a SaaS product serving different client contexts.",
           "Implemented dynamic white-label support with adaptable colors, logos, and themes without losing experience consistency.",
           "Structured design tokens with CSS variables and mat-sys to make the interface more scalable and predictable.",
-          "Refined complex components and fixed UI/UX, state, DOM, and i18n issues to support ongoing product maintenance.",
+          "Refactored components and fixed UI/UX, state, DOM, and i18n issues to support ongoing product maintenance.",
         ],
         whyItMatters:
-          "Reinforces a scalable product mindset with attention to core flows, visual consistency, and healthy long-term maintenance.",
+          "Connects product scale with key flows, interface consistency, and ongoing maintenance.",
         tags: ["Angular", "TypeScript", "White label", "Design tokens", "i18n", "SaaS"],
       },
       gocoffee: {
@@ -195,12 +195,12 @@ export const enUS = {
         summary:
           "Operational and leadership experience in a fast-paced environment, centered on service, training, and reliable execution under pressure.",
         highlights: [
-          "Led the team and trained baristas on daily operations and service standards.",
+          "Led teams and trained baristas on daily operations and service standards.",
           "Handled inventory, organization, and quick response during peak-pressure moments.",
           "Maintained service consistency through clear communication, ownership, and steady day-to-day execution.",
         ],
         whyItMatters:
-          "Brings product work closer to real operations, helping frame process, service, and end-user expectations more clearly.",
+          "Connects operations, service, and leadership with a closer read of real users.",
         tags: ["Leadership", "Operations", "Customer service", "Organization"],
       },
       marcondes: {
@@ -212,10 +212,10 @@ export const enUS = {
         highlights: [
           "Worked with Google Ads, Meta Ads, and Google Analytics to track acquisition and performance.",
           "Used A/B testing and ROI analysis to support decisions tied to measurable outcomes.",
-          "Contributed to evaluating landing pages, funnel steps, and user behavior across the journey.",
+          "Contributed to analyzing and creating landing pages, funnel steps, and user behavior across the journey.",
         ],
         whyItMatters:
-          "Strengthens product decisions around conversion, message clarity, and data-informed reading of user behavior.",
+          "Links metrics, conversion, and user behavior to clearer business decisions.",
         tags: ["ROI", "Conversion", "Analytics", "A/B", "Landing pages"],
       },
     },
@@ -231,114 +231,106 @@ export const enUS = {
     },
     items: {
       poAgentOpenclaw: {
-        name: "PO Agent / OpenClaw",
+        name: "ClawDex / PO Agent",
         description:
-          "A product agent connected to Discord and Linear to follow context, read progress signals, and support decisions inside a real workflow.",
-        preview: "Product context, progress, and decisions in one flow.",
+          "ClawDex is a digital Product Owner for tracking context, organizing backlog work, and supporting product decisions with Discord, Linear, and OpenClaw.",
+        preview: "Digital Product Owner in a real workflow.",
         caseStudy: {
           problem:
-            "When project conversations live in Discord and tasks live in Linear, context spreads out and it becomes harder to see what actually moved forward.",
+            "Project conversations, decisions, and tasks spread across channels, backlog, and history, making prioritization, status clarity, and real progress tracking harder.",
           solution:
-            "I shaped the agent to monitor channels, interpret status, and turn scattered signals into actionable product context.",
+            "I modeled ClawDex on OpenClaw, connected it to Discord and Linear, and used it to interpret context, inspect backlog, diagnose issues, and suggest safer next steps.",
           impact:
-            "The workflow gets clearer around progress and next steps, with fewer manual checks and better focus on what needs a decision.",
+            "The workflow reduces operational noise, organizes scattered signals, and supports product decisions without automating critical changes before preview and explicit confirmation.",
         },
-        tags: [
-          "Node.js",
-          "AI",
-          "Discord",
-          "Linear",
-          "Product Owner",
-          "Automation",
-          "Modular architecture",
-        ],
+        tags: ["Node.js", "OpenClaw", "Discord", "Linear", "Product Owner", "AI"],
         status: "Personal product",
-        highlight: "Product context in a real workflow",
+        highlight: "Digital Product Owner in a real workflow",
       },
       sparkSalesSystem: {
-        name: "Spark / Sales System",
+        name: "Spark / Sales CRM",
         description:
-          "A multi-platform commercial operations case for sales, catalog, inventory, and operational visibility, connecting Flutter mobile, C# desktop, and a Python API.",
-        preview: "Commercial operations connected across sales, inventory, and channels.",
+          "A multi-platform sales CRM that connects sales entry, commercial control, data analysis, and middleware.",
+        preview: "Mobile, desktop, and API connected.",
         caseStudy: {
           problem:
-            "The operation needed to sell, browse the catalog, and follow inventory with continuity across counter work, mobile routines, and management visibility.",
+            "A commercial operation needs to connect sales, customers, products, and data analysis without relying on scattered controls or manual processes that are hard to maintain.",
           solution:
-            "I designed a multi-platform architecture connecting the mobile app, desktop system, and API to organize sales, products, inventory, and dashboards.",
+            "I built the Flutter mobile front for sales entry and customer registration, integrated with a C# desktop system and Python middleware connected to Supabase.",
           impact:
-            "The solution gives the business a more coherent view of the commercial routine and reduces friction between channels.",
+            "The project shows the ability to connect interface, operations, and data into a clearer daily-use solution, with defined responsibilities across mobile, desktop, and backend.",
         },
-        tags: ["Flutter", "Python", "API REST", "C#", "Sales", "Inventory", "Dashboard"],
+        tags: ["Flutter", "Dart", "C#", "Python", "Supabase", "CRM"],
         status: "Commercial operation",
-        highlight: "Sales, inventory, and visibility",
+        highlight: "Mobile, desktop, and API connected",
       },
       pdfOcrPostTranscribe: {
-        name: "PDF OCR / post_transcribe",
+        name: "PDF Transcribe",
         description:
-          "An application that extracts and structures text from PDFs and images, with a review-oriented interface and a backend built to automate manual work.",
-        preview: "Text extracted, structured, and ready for review.",
+          "An application for turning PDFs and images into content that is easier to review, copy, and structure.",
+        preview: "PDF, OCR, and content review.",
         caseStudy: {
           problem:
-            "PDF and image content had to be read and transcribed manually before it could be reviewed, reused, or organized.",
+            "PDFs and images can be hard to access, review, or transcribe manually, which turns useful content into repetitive, low-value work.",
           solution:
-            "I built a flow for upload, OCR extraction, text structuring, and web-based review so the manual process becomes faster.",
+            "I built an app with PDF upload, page extraction, thumbnails, review, and transcription, connecting front end and backend around a workflow designed to reduce manual work.",
           impact:
-            "The workflow reduces transcription effort while still leaving room for human validation when the content needs checking.",
+            "The solution turns a heavy process into a more organized experience, making it easier to review, copy, and structure content with less effort.",
         },
-        tags: ["React", "FastAPI", "Python", "OCR", "PDFs", "Deploy"],
-        status: "Personal product",
-        highlight: "Automation with human review",
+        tags: ["React", "FastAPI", "Python", "OCR", "PDF", "Automation"],
+        status: "Process automation",
+        highlight: "PDF, OCR, and content review",
       },
       gocoffeeLandingPage: {
-        name: "GoCoffee Landing Page",
+        name: "LP GoCoffee Cascavel",
         description:
-          "A conversion-focused landing page for GoCoffee Cascavel, connecting visual appeal, local brand positioning, and WhatsApp contact.",
-        preview: "Local brand, visual experience, and direct contact.",
+          "A landing page shaped around visual narrative, brand presentation, and a conversion-focused experience.",
+        preview: "Brand, UI/UX, and conversion.",
         caseStudy: {
           problem:
-            "The unit needed a stronger digital presence that made the brand, offer, and contact path immediately clear.",
+            "A local brand needs to present its products, space, and value proposition clearly, building trust and guiding visitors toward a simple action.",
           solution:
-            "I shaped a visual experience around brand perception, commercial hierarchy, and WhatsApp as the main conversion path.",
+            "I developed an Angular landing page focused on UI/UX, visual narrative, editorial product presentation, and clearer navigation.",
           impact:
-            "The page makes the next step easier for visitors and gives the business a clearer, more consistent digital presence.",
+            "The project shows care for experience, brand, and user decision-making, connecting design, content, and a commercial goal in one interface.",
         },
-        tags: ["Angular", "SCSS", "Landing page", "UI/UX", "Conversion"],
+        tags: ["Angular", "TypeScript", "SCSS", "UI/UX", "Landing page", "Conversion"],
         status: "Landing page",
-        highlight: "Local brand and conversion",
+        highlight: "Brand, UI/UX, and conversion",
       },
       currentPortfolio: {
-        name: "Product-oriented portfolio",
+        name: "Post.IA",
         description:
-          "A repositioning of the professional portfolio to communicate product thinking, architecture, UX, and real delivery through bilingual content, a design system, and accessible patterns.",
-        preview: "Professional narrative, visual system, and clear positioning.",
+          "An AI product for turning briefs into clearer, more strategic posts aligned with the right audience.",
+        preview: "Briefing, positioning, and content.",
         caseStudy: {
           problem:
-            "The portfolio needed to feel less like a project list and more like a clear expression of how Diogo thinks about product, architecture, and execution.",
+            "Strategic content requires turning a brief, context, and positioning into a clear message; without structure, the result tends to become generic copy.",
           solution:
-            "I reorganized the narrative, visual hierarchy, i18n, components, and accessibility patterns to keep the experience consistent on desktop and mobile.",
+            "I structured an experience that helps translate a brief into more directed content, using AI to support clarity, positioning, and message intent.",
           impact:
-            "The experience communicates maturity, context, and positioning with less need for long explanations.",
+            "The project reinforces the connection between product, communication, and applied AI, showing technology as a tool for guiding message, audience, and positioning.",
         },
-        tags: ["Next.js", "TypeScript", "Tailwind", "shadcn/ui", "Design System"],
-        status: "Professional positioning",
-        highlight: "Narrative, product, and maturity",
+        tags: ["Next.js", "TypeScript", "AI", "Product", "Content", "Positioning"],
+        status: "AI product",
+        highlight: "Briefing, positioning, and content",
       },
       seuClimaHoje: {
         name: "Seu Clima Hoje",
         description:
-          "A Flutter app for checking current weather quickly, with external API integration and a direct mobile interface.",
-        preview: "Current weather presented with speed and clarity.",
+          "A Flutter app for checking current weather in a simple, fast, and organized way.",
+        preview: "External API and multi-platform base.",
         caseStudy: {
           problem:
-            "Weather lookup needed to be simple on mobile, with external data presented without visual noise.",
+            "Checking basic weather information can feel confusing when the data is not presented directly and objectively.",
           solution:
-            "I built a lean Flutter experience connected to an API, prioritizing information hierarchy and quick response.",
+            "I developed a Flutter app that displays weather information through an external API, with a multi-platform structure prepared for future iterations.",
           impact:
-            "The app provides an objective lookup while reinforcing care with integration, interface state, and mobile readability.",
+            "The project demonstrates mobile practice with Flutter, external API integration, and the initial organization of an app designed for Android, iOS, Web, and Desktop.",
         },
-        tags: ["Flutter", "API", "Mobile UX", "Applied study"],
-        status: "Complementary project",
-        highlight: "Direct mobile lookup",
+        tags: ["Flutter", "Dart", "External API", "Mobile", "Multi-platform"],
+        status: "Flutter app",
+        highlight: "External API and multi-platform base",
       },
     },
   },

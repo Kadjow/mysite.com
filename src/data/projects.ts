@@ -31,6 +31,7 @@ const projectConfigs = [
     key: "sparkSalesSystem",
     tone: "emerald",
     featured: true,
+    repoUrl: "https://github.com/BugMasters/Sistema_Vendas",
   },
   {
     key: "pdfOcrPostTranscribe",
@@ -40,22 +41,21 @@ const projectConfigs = [
     demoUrl: "https://post-transcribe-web.vercel.app",
   },
   {
-    key: "gocoffeeLandingPage",
-    tone: "amber",
-    featured: false,
-    repoUrl: "https://github.com/Kadjow/LP_gocoffeeCascavel",
-  },
-  {
     key: "currentPortfolio",
     tone: "indigo",
-    featured: false,
-    repoUrl: "https://github.com/Kadjow/diogo.a.gulhak.github.io",
-    demoUrl: "https://kadjow.github.io/diogo.a.gulhak.github.io/",
+    featured: true,
+    repoUrl: "https://github.com/Kadjow/Post.IA",
+  },
+  {
+    key: "gocoffeeLandingPage",
+    tone: "amber",
+    featured: true,
+    repoUrl: "https://github.com/Kadjow/LP_gocoffeeCascavel",
   },
   {
     key: "seuClimaHoje",
     tone: "rose",
-    featured: false,
+    featured: true,
     repoUrl: "https://github.com/Kadjow/Seu-Clima-Hoje",
   },
 ] as const satisfies ReadonlyArray<{
